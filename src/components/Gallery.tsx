@@ -27,28 +27,27 @@ function HubPanel({ section, index, onClick }: { section: any, index: number, on
             transition={{ delay: (index % 4) * 0.1, duration: 0.8, ease: "circOut" }}
             onClick={onClick}
             onMouseMove={handleMouseMove}
-            className="group relative flex-1 flex items-center justify-center cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-white/5 last:border-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:flex-[2.5]"
+            className="group relative flex-1 flex items-center justify-center cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-white/5 last:border-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:flex-[2.5] shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] before:absolute before:inset-0 before:z-20 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-200%] before:hover:translate-x-[200%] before:transition-transform before:duration-1000 before:ease-in-out before:rotate-[35deg]"
         >
             {/* Background Image with Parallax & Zoom */}
             <motion.img
                 src={section.image}
                 alt={section.title}
                 style={{ x: imgX, y: imgY }}
-                className="absolute inset-0 w-[110%] h-[110%] -left-[5%] -top-[5%] object-cover grayscale brightness-[0.4] group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-105 transition-all duration-1000 ease-out"
+                className="absolute inset-0 w-[110%] h-[110%] -left-[5%] -top-[5%] object-cover grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 group-hover:blur-[1.5px] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
             />
 
-            {/* Overlays: Vignette & Glass Blur */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 opacity-100 group-hover:opacity-40 transition-opacity duration-700" />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-700 pointer-events-none" />
+            {/* Glassmorphism Overlay */}
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/30 to-transparent transition-all duration-700" />
 
             {/* Content: Vertical Text & Gold Line */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full w-full pointer-events-none">
+            <div className="relative z-30 flex flex-col items-center justify-center h-full w-full pointer-events-none">
                 <div className="md:transform md:-rotate-90 md:origin-center whitespace-nowrap overflow-visible">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.4em] font-sans font-black text-white/90 group-hover:text-gold group-hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-700 uppercase">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.4em] font-sans font-black text-white/90 group-hover:text-gold group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] transition-all duration-700 uppercase">
                         {section.title}
                     </h2>
                 </div>
-                <div className="hidden md:block absolute bottom-12 w-px h-0 group-hover:h-32 bg-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] transition-all duration-1000 ease-in-out" />
+                <div className="hidden md:block absolute bottom-12 w-px h-0 group-hover:h-32 bg-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] transition-all duration-700 ease-in-out" />
             </div>
         </motion.div>
     );

@@ -78,8 +78,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  cursor: none;
-  /* Custom Mic cursor */
+  /* Custom Mic cursor - Only hide default on desktop with mouse */
+  @media (min-width: 768px) and (pointer: fine) {
+    cursor: none;
+  }
 
   /* Security: Disable Selection & Callouts */
   user-select: none;

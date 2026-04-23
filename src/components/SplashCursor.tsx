@@ -1,9 +1,10 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 import { Mic } from "lucide-react";
 
 export default function SplashCursor() {
+    const [isFinePointer, setIsFinePointer] = useState(false);
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
 
@@ -12,21 +13,27 @@ export default function SplashCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
+        const checkPointer = () => {
+            setIsFinePointer(window.matchMedia("(pointer: fine)").matches);
+        };
+
+        checkPointer();
+        
         const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX - 12); // Offset to align tip somewhat
+            cursorX.set(e.clientX - 12);
             cursorY.set(e.clientY - 4);
         };
 
-        // Strictly disable on mobile/touch devices to prevent "hangs"
-        if (typeof window !== 'undefined' && window.matchMedia("(pointer: coarse)").matches) {
-            return;
+        if (window.matchMedia("(pointer: fine)").matches) {
+            window.addEventListener("mousemove", moveCursor);
         }
 
-        window.addEventListener("mousemove", moveCursor);
         return () => {
             window.removeEventListener("mousemove", moveCursor);
         };
     }, [cursorX, cursorY]);
+
+    if (!isFinePointer) return null;
 
     return (
         <motion.div
@@ -39,8 +46,8 @@ export default function SplashCursor() {
             {/* Realistic Black Mic with Gold Outline/Grille */}
             <Mic
                 size={34}
-                className="fill-neutral-900 stroke-[1.5px]" // Black body, Gold outline (inherited)
-                style={{ filter: "drop-shadow(0 0 2px rgba(212,175,55,0.8))" }} // Extra inner glow for metallic feel
+                className="fill-neutral-900 stroke-[1.5px]"
+                style={{ filter: "drop-shadow(0 0 2px rgba(212,175,55,0.8))" }}
             />
         </motion.div>
     );

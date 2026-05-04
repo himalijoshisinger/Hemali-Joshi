@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-mo
 import { X } from "lucide-react";
 import ArtisticGalleryCard from "./ArtisticGalleryCard";
 import { galleryImages } from "@/data/galleryData";
+import { useRouter } from "next/navigation";
 
 // 💎 HUB PANEL COMPONENT
 function HubPanel({ section, index, onClick }: { section: any, index: number, onClick: () => void }) {
@@ -54,6 +55,7 @@ function HubPanel({ section, index, onClick }: { section: any, index: number, on
 }
 
 export default function Gallery({ initialCategory = null }: { initialCategory?: string | null }) {
+    const router = useRouter();
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory);
 
@@ -115,7 +117,27 @@ export default function Gallery({ initialCategory = null }: { initialCategory?: 
                                     key={sec.id}
                                     section={sec}
                                     index={idx}
-                                    onClick={() => setActiveCategory(sec.id)}
+                                    onClick={() => {
+                                        if (sec.id === "wedding") {
+                                            router.push('/gallery/wedding');
+                                        } else if (sec.id === "navratri") {
+                                            router.push('/gallery/navratri');
+                                        } else if (sec.id === "albums") {
+                                            router.push('/gallery/albums');
+                                        } else if (sec.id === "modelling") {
+                                            router.push('/gallery/modelling');
+                                        } else if (sec.id === "brands") {
+                                            router.push('/gallery/brands');
+                                        } else if (sec.id === "celebrities") {
+                                            router.push('/gallery/celebrities');
+                                        } else if (sec.id === "concerts") {
+                                            router.push('/gallery/concerts');
+                                        } else if (sec.id === "judge") {
+                                            router.push('/gallery/judge');
+                                        } else {
+                                            setActiveCategory(sec.id);
+                                        }
+                                    }}
                                 />
                             ))}
                         </motion.div>
@@ -133,7 +155,27 @@ export default function Gallery({ initialCategory = null }: { initialCategory?: 
                                     key={sec.id}
                                     section={sec}
                                     index={idx + 4}
-                                    onClick={() => setActiveCategory(sec.id)}
+                                    onClick={() => {
+                                        if (sec.id === "wedding") {
+                                            router.push('/gallery/wedding');
+                                        } else if (sec.id === "navratri") {
+                                            router.push('/gallery/navratri');
+                                        } else if (sec.id === "albums") {
+                                            router.push('/gallery/albums');
+                                        } else if (sec.id === "modelling") {
+                                            router.push('/gallery/modelling');
+                                        } else if (sec.id === "brands") {
+                                            router.push('/gallery/brands');
+                                        } else if (sec.id === "celebrities") {
+                                            router.push('/gallery/celebrities');
+                                        } else if (sec.id === "concerts") {
+                                            router.push('/gallery/concerts');
+                                        } else if (sec.id === "judge") {
+                                            router.push('/gallery/judge');
+                                        } else {
+                                            setActiveCategory(sec.id);
+                                        }
+                                    }}
                                 />
                             ))}
                         </motion.div>

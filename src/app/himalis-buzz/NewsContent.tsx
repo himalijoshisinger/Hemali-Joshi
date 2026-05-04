@@ -179,6 +179,102 @@ export default function NewsContent() {
                         </div>
                     </section>
 
+                    {/* Featured Podcast Section */}
+                    <section className="container mx-auto px-6 py-12 md:py-24">
+                        <div className="relative rounded-3xl overflow-hidden border border-gold/20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
+                            {/* Decorative Background Elements */}
+                            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+                            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+                            
+                            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12 p-8 md:p-16 lg:p-20">
+                                {/* Podcast Cover Art */}
+                                <div className="w-full lg:w-1/3 flex justify-center">
+                                    <motion.div 
+                                        initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+                                        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                        whileHover={{ scale: 1.05, rotate: 2 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.8, type: "spring" }}
+                                        className="relative w-64 md:w-80 aspect-square rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white/10 group cursor-pointer"
+                                    >
+                                        <Image 
+                                            src="/assets/News/IMG_7116.jpg" 
+                                            alt="Podcast Cover" 
+                                            fill 
+                                            className="object-cover filter contrast-[1.1] saturate-50 group-hover:saturate-100 transition-all duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-6">
+                                            <div>
+                                                <div className="text-gold font-serif tracking-widest text-xs uppercase mb-1">Episode 1</div>
+                                                <div className="text-white font-serif text-lg leading-none">Himali's Voice</div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </div>
+
+                                {/* Podcast Info and Player */}
+                                <div className="w-full lg:w-2/3 text-center lg:text-left flex flex-col items-center lg:items-start">
+                                    <div className="inline-block px-4 py-1.5 border border-gold/30 rounded-full text-[10px] md:text-xs uppercase tracking-[0.2em] text-gold mb-6 bg-gold/5 backdrop-blur-sm">
+                                        Featured Podcast
+                                    </div>
+                                    
+                                    <h2 className="font-serif text-4xl md:text-6xl text-white mb-6 leading-tight">
+                                        The Rhythm of <span className="text-gold italic">Roots</span>
+                                    </h2>
+                                    
+                                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-2xl font-light italic leading-relaxed">
+                                        Join Himali as she discusses the journey of remastering traditional Gujarati folk music for the modern generation, the inspiration behind her soulful compositions, and the vibrant energy of global live performances.
+                                    </p>
+
+                                    {/* Mock Audio Player */}
+                                    <div className="w-full max-w-xl bg-black/40 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-inner">
+                                        <div className="flex items-center gap-4 md:gap-6">
+                                            {/* Play Button */}
+                                            <button className="w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-full bg-gradient-to-br from-gold to-yellow-600 flex items-center justify-center text-black hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="ml-1 md:w-8 md:h-8">
+                                                    <path d="M8 5V19L19 12L8 5Z" />
+                                                </svg>
+                                            </button>
+                                            
+                                            {/* Waveform Visualization */}
+                                            <div className="flex-1 flex items-center gap-1 md:gap-1.5 h-10 md:h-12">
+                                                {Array.from({ length: 24 }).map((_, i) => (
+                                                    <motion.div 
+                                                        key={i}
+                                                        animate={{ 
+                                                            height: ["20%", "80%", "30%", "100%", "40%"],
+                                                            opacity: [0.3, 1, 0.5, 1, 0.4]
+                                                        }}
+                                                        transition={{ 
+                                                            duration: 1.5 + Math.random() * 2, 
+                                                            repeat: Infinity, 
+                                                            repeatType: "mirror",
+                                                            delay: Math.random()
+                                                        }}
+                                                        className="flex-1 bg-gold rounded-full w-1"
+                                                    />
+                                                ))}
+                                            </div>
+                                            
+                                            <div className="text-gray-400 text-xs font-mono tracking-widest hidden sm:block">
+                                                45:20
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                                            <span className="text-[10px] text-gray-500 uppercase tracking-widest">Listen On:</span>
+                                            <button className="text-xs md:text-sm font-medium text-white/80 hover:text-gold transition-colors">Spotify</button>
+                                            <span className="w-1 h-1 rounded-full bg-white/20" />
+                                            <button className="text-xs md:text-sm font-medium text-white/80 hover:text-gold transition-colors">Apple Podcasts</button>
+                                            <span className="w-1 h-1 rounded-full bg-white/20" />
+                                            <button className="text-xs md:text-sm font-medium text-white/80 hover:text-gold transition-colors">YouTube Music</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Highly Artistic "Thank You Patan" Section */}
                     <section className="relative overflow-hidden bg-[#050505] py-24 md:py-32">
                         {/* Background Decoration */}

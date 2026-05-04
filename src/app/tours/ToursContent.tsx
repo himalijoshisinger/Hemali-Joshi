@@ -68,10 +68,10 @@ export default function ToursContent() {
                         <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
                             <div className="text-center md:text-left flex-1 w-full">
-                                <span className="inline-block px-3 py-1 border border-gold/30 rounded-full text-xs uppercase tracking-widest text-gold mb-4">International</span>
-                                <h3 className="text-3xl md:text-5xl font-serif mb-2 text-white">Event at Dubai</h3>
+                                <span className="inline-block px-3 py-1 border border-gold/30 rounded-full text-xs uppercase tracking-widest text-gold mb-4">Cultural</span>
+                                <h3 className="text-3xl md:text-5xl font-serif mb-2 text-white">Patan Sharad Purnima</h3>
                                 <p className="text-gray-400 flex items-center justify-center md:justify-start gap-2 mb-4">
-                                    <MapPin size={16} className="text-gold" /> Dubai, UAE
+                                    <MapPin size={16} className="text-gold" /> Patan, Gujarat
                                 </p>
 
                                 {/* Classic Cinematic Stack Gallery with Parallax */}
@@ -159,7 +159,7 @@ export default function ToursContent() {
                         <div className="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
                             <div className="text-center md:text-left flex-1">
                                 <span className="inline-block px-3 py-1 border border-maroon/50 rounded-full text-xs uppercase tracking-widest text-maroon-400 mb-4 text-gold">Cultural</span>
-                                <h3 className="text-3xl md:text-5xl font-serif mb-2 text-white">Ratri Before Navratri</h3>
+                                <h3 className="text-3xl md:text-5xl font-serif mb-2 text-white">Ratri Before UK</h3>
                                 <p className="text-gray-400 flex items-center justify-center md:justify-start gap-2 mb-4">
                                     <Calendar size={16} className="text-gold" /> Upcoming Festival
                                 </p>
@@ -272,6 +272,72 @@ export default function ToursContent() {
                             </div>
                             <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4 z-20">
                                 <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">03</span>
+                                <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Event 4 */}
+                    <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-r from-maroon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                            <div className="text-center md:text-left flex-1">
+                                <span className="inline-block px-3 py-1 border border-maroon/50 rounded-full text-xs uppercase tracking-widest text-maroon-400 mb-4 text-gold">Cultural</span>
+                                <h3 className="text-3xl md:text-5xl font-serif mb-2 text-white">UK 24 25</h3>
+
+                                {/* Optimized Artistic Fan Spread Gallery */}
+                                <div className="relative mt-2 md:-mt-10 min-h-[320px] md:min-h-[400px] flex items-center justify-center">
+                                    {/* Background decorative glow */}
+                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[280px] bg-maroon/10 blur-[100px] pointer-events-none rounded-full" />
+
+                                    <div className="relative w-full h-full">
+                                        {[
+                                            { src: "ratri1.JPG", rotate: -12, left: "0%", top: "5%", z: 10, label: "Cultural Dance", delay: 0 },
+                                            { src: "ratri3.JPG", rotate: 15, left: "52%", top: "-5%", z: 20, label: "Devotional Moments", delay: 0.2 },
+                                            { src: "ratri2.JPG", rotate: -4, left: "26%", top: "25%", z: 30, label: "Vibrant Navratri", delay: 0.1 }
+                                        ].map((img, idx) => (
+                                            <motion.div
+                                                key={idx}
+                                                initial={{ opacity: 0, scale: 0.8, rotate: 0, y: 40 }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    scale: 1,
+                                                    rotate: img.rotate,
+                                                    left: img.left,
+                                                    top: img.top,
+                                                    y: 0,
+                                                    transition: { delay: img.delay, type: "spring", stiffness: 90, damping: 18 }
+                                                }}
+                                                whileHover={{
+                                                    scale: 1.08,
+                                                    rotate: 0,
+                                                    zIndex: 100,
+                                                    y: -30,
+                                                    transition: { duration: 0.3 }
+                                                }}
+                                                viewport={{ once: true }}
+                                                className="absolute w-[240px] sm:w-[300px] md:w-[380px] aspect-[14/9] rounded-2xl overflow-hidden border-[6px] border-white shadow-[0_30px_60px_rgba(0,0,0,0.6)] transition-all duration-300 pointer-events-auto cursor-pointer group/card"
+                                                style={{
+                                                    zIndex: img.z,
+                                                    ...parallaxStyle
+                                                }}
+                                            >
+                                                <img
+                                                    src={`/assets/tours/ratri/${img.src}`}
+                                                    alt={img.label}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-black/15 transition-colors group-hover/card:bg-transparent" />
+                                                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                                                    <p className="text-sm uppercase tracking-widest text-gold text-center font-medium">{img.label}</p>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4">
+                                <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">04</span>
                                 <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
                             </div>
                         </div>

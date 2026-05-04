@@ -133,14 +133,14 @@ export default function BookingForm() {
                                                 onChange={handleChange}
                                                 className="bg-black border-b border-white/10 rounded-tl-lg px-2 py-3 text-white focus:bg-white/10 focus:border-gold focus:outline-none transition-all appearance-none cursor-pointer w-24 text-center border-r border-white/10 flex-shrink-0"
                                             >
-                                                <option value="+91">+91 🇮🇳</option>
-                                                <option value="+1">+1 🇺🇸</option>
-                                                <option value="+44">+44 🇬🇧</option>
-                                                <option value="+971">+971 🇦🇪</option>
-                                                <option value="+61">+61 🇦🇺</option>
-                                                <option value="+1">+1 🇨🇦</option>
-                                                <option value="+33">+33 🇫🇷</option>
-                                                <option value="+49">+49 🇩🇪</option>
+                                                <option value="+91" className="bg-[#0a0a0a] text-white">+91 🇮🇳</option>
+                                                <option value="+1" className="bg-[#0a0a0a] text-white">+1 🇺🇸</option>
+                                                <option value="+44" className="bg-[#0a0a0a] text-white">+44 🇬🇧</option>
+                                                <option value="+971" className="bg-[#0a0a0a] text-white">+971 🇦🇪</option>
+                                                <option value="+61" className="bg-[#0a0a0a] text-white">+61 🇦🇺</option>
+                                                <option value="+1" className="bg-[#0a0a0a] text-white">+1 🇨🇦</option>
+                                                <option value="+33" className="bg-[#0a0a0a] text-white">+33 🇫🇷</option>
+                                                <option value="+49" className="bg-[#0a0a0a] text-white">+49 🇩🇪</option>
                                             </select>
                                             <input
                                                 required
@@ -176,10 +176,10 @@ export default function BookingForm() {
                                         onChange={handleChange}
                                         className="w-full bg-black border-b border-white/10 rounded-t-lg px-4 py-3 text-white focus:bg-white/10 focus:border-gold focus:outline-none transition-all appearance-none cursor-pointer"
                                     >
-                                        <option value="Wedding / Sangeet">Wedding / Sangeet</option>
-                                        <option value="Corporate Event">Corporate Event</option>
-                                        <option value="Public Concert">Public Concert</option>
-                                        <option value="Private Party">Private Party</option>
+                                        <option value="Wedding / Sangeet" className="bg-[#0a0a0a] text-white">Wedding / Sangeet</option>
+                                        <option value="Corporate Event" className="bg-[#0a0a0a] text-white">Corporate Event</option>
+                                        <option value="Public Concert" className="bg-[#0a0a0a] text-white">Public Concert</option>
+                                        <option value="Private Party" className="bg-[#0a0a0a] text-white">Private Party</option>
                                     </select>
                                 </div>
 

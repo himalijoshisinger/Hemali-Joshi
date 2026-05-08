@@ -81,11 +81,12 @@ export default function Gallery({ initialCategory = null }: { initialCategory?: 
 
     // 🎯 SECTION DATA
     const ALL_SECTIONS = [
-        { id: "navratri", title: "NAVRATRI", image: "/assets/portrait-1.jpg" },
-        { id: "wedding", title: "WEDDINGS", image: "/assets/gallery/wedding.png" },
-        { id: "concerts", title: "CONCERTS", image: "/assets/gallery/prewedding.png" },
-        { id: "brands", title: "BRAND SHOOT", image: "/assets/splash-poster.jpg" },
-        { id: "albums", title: "ALBUMS", image: "/assets/gallery/events.png" },
+        { id: "navratri", title: "NAVRATRI", image: "/Navratri/Nav 1.jpeg" },
+        { id: "wedding", title: "WEDDINGS", image: "/Wedding/Wed 1.jpeg" },
+        { id: "concerts", title: "CONCERTS", image: "/Concert/con 1.jpeg" },
+        { id: "celebrities", title: "CELEBRITIES", image: "/Celebrites/cel 2.jpeg" },
+        { id: "brands", title: "BRAND SHOOT", image: "/Brand Collabration/DSC04684.jpg" },
+        { id: "albums", title: "ALBUMS", image: "/Own Album/Album 2.jpeg" },
     ];
 
     return (

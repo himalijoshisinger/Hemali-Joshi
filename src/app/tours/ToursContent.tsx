@@ -121,7 +121,6 @@ export default function ToursContent() {
                             </div>
                             <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4">
                                 <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">01</span>
-                                <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -193,7 +192,6 @@ export default function ToursContent() {
                             </div>
                             <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4 z-20">
                                 <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">02</span>
-                                <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -277,7 +275,6 @@ export default function ToursContent() {
                             </div>
                             <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4">
                                 <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">03</span>
-                                <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -357,7 +354,6 @@ export default function ToursContent() {
                             </div>
                             <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4 z-20">
                                 <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">04</span>
-                                <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -404,7 +400,6 @@ export default function ToursContent() {
                             </div>
                             <div className="w-full md:w-auto border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12 flex flex-col items-center md:items-end gap-4 z-20">
                                 <span className="text-4xl md:text-6xl font-serif text-gold/10 group-hover:text-gold/30 transition-colors duration-500">05</span>
-                                <button className="text-sm uppercase tracking-widest border-b border-gold/50 pb-1 hover:text-gold hover:border-gold transition-all">View Details</button>
                             </div>
                         </div>
                     </div>

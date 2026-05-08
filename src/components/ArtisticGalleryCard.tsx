@@ -97,14 +97,7 @@ export default function ArtisticGalleryCard({ src, onClick }: ArtisticGalleryCar
                 />
 
                 {/* Overlay Text */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-40 transform translate-z-10">
-                    <span
-                        className="text-gold text-sm uppercase tracking-widest font-bold"
-                        style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
-                    >
-                        View Full
-                    </span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-40 transform translate-z-10" />
             </motion.div>
         </motion.div>
     );

@@ -23,6 +23,21 @@ export const galleryImages = [
     // New Categories
     { id: 28, src: "/assets/portrait-1.jpg", category: "navratri" },
     { id: 29, src: "/assets/portrait-2.jpg", category: "navratri" },
-    { id: 34, src: "/assets/splash-full.jpg", category: "brands" },
-    { id: 35, src: "/assets/splash-poster.jpg", category: "brands" },
+    { id: 34, src: "/Brand Collabration/DSC04684.jpg", category: "brands" },
+    { id: 35, src: "/Brand Collabration/DSC05859.jpg", category: "brands" },
+    { id: 36, src: "/Brand Collabration/101.jpeg", category: "brands" },
+    { id: 37, src: "/Brand Collabration/102.jpeg", category: "brands" },
+    { id: 38, src: "/Brand Collabration/103.jpeg", category: "brands" },
+    { id: 39, src: "/Brand Collabration/1000018417.jpg.jpeg", category: "brands" },
+    { id: 40, src: "/Brand Collabration/1000018698.jpg.jpeg", category: "brands" },
+    { id: 41, src: "/Brand Collabration/DSC06658.jpg", category: "brands" },
+    { id: 47, src: "/Brand Collabration/DSC06010.jpg", category: "brands" },
+    { id: 48, src: "/Brand Collabration/DSC04581.jpg", category: "brands" },
+    
+    // Celebrities
+    { id: 42, src: "/Celebrites/cel 1.jpeg", category: "celebrities" },
+    { id: 43, src: "/Celebrites/cel 2.jpeg", category: "celebrities" },
+    { id: 44, src: "/Celebrites/cel 3.jpeg", category: "celebrities" },
+    { id: 45, src: "/Celebrites/IMG_7083.JPG", category: "celebrities" },
+    { id: 46, src: "/Celebrites/WhatsApp Image 2026-04-22 at 12.09.14 PM.jpeg", category: "celebrities" },
 ];

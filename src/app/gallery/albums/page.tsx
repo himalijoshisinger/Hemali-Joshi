@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 };
 
 const albumImages = [
-    { src: "/Own Album/Album 1.jpeg", ratio: 1.41, title: "Artistic Expression" },
-    { src: "/Own Album/Album 2.jpeg", ratio: 0.70, title: "Portrait Session" },
-    { src: "/Own Album/Album 3.jpeg", ratio: 1.00, title: "Musical Harmony" },
-    { src: "/Own Album/Album 4.jpeg", ratio: 1.00, title: "Vocal Essence" },
-    { src: "/Own Album/Album 5.jpeg", ratio: 1.00, title: "Studio Vibe" },
-    { src: "/Own Album/Album 6.jpeg", ratio: 0.80, title: "Soulful Melody" },
-    { src: "/Own Album/Album 7.jpeg", ratio: 0.67, title: "Elegant Performance" },
-    { src: "/Own Album/Album 8.jpeg", ratio: 1.00, title: "Artist Spotlight" },
-    { src: "/Own Album/Album 9.jpeg", ratio: 1.00, title: "Backstage Magic" },
-    { src: "/Own Album/Album 10.jpeg", ratio: 1.00, title: "Rhythm & Blues" },
-    { src: "/Own Album/Album 12.jpeg", ratio: 1.00, title: "Classic Style" },
-    { src: "/Own Album/Album 13.jpeg", ratio: 1.00, title: "Pure Emotion" },
-    { src: "/Own Album/Album 14.jpeg", ratio: 1.00, title: "Stage Presence" },
-    { src: "/Own Album/15657711-5532-4f2f-aae9-4b2ef333f09e.JPG", ratio: 1.00, title: "Visual Storytelling" },
+    { src: "/Own Album/Album 2.jpeg", title: "Portrait Session" },
+    { src: "/Own Album/Album 3.jpeg", title: "Musical Harmony" },
+    { src: "/Own Album/Album 4.jpeg", title: "Vocal Essence" },
+    { src: "/Own Album/Album 5.jpeg", title: "Studio Vibe" },
+    { src: "/Own Album/Album 6.jpeg", title: "Soulful Melody" },
+    { src: "/Own Album/Album 7.jpeg", title: "Elegant Performance" },
+    { src: "/Own Album/Album 8.jpeg", title: "Artist Spotlight" },
+    { src: "/Own Album/Album 9.jpeg", title: "Backstage Magic" },
+    { src: "/Own Album/Album 10.jpeg", title: "Rhythm & Blues" },
+    { src: "/Own Album/Album 11.jpeg", title: "Sound Waves" },
+    { src: "/Own Album/Album 12.jpeg", title: "Classic Style" },
+    { src: "/Own Album/Album 13.jpeg", title: "Pure Emotion" },
+    { src: "/Own Album/Album 14.jpeg", title: "Stage Presence" },
+    { src: "/Own Album/15657711-5532-4f2f-aae9-4b2ef333f09e.JPG", title: "Visual Storytelling" },
 ];
 
 export default function AlbumsGalleryPage() {
@@ -54,15 +54,10 @@ export default function AlbumsGalleryPage() {
                                 alt={`Own Album by Himali Joshi - ${img.title}`}
                                 width={800}
                                 height={1200}
-                                className="w-full h-auto object-cover filter contrast-[1.05] group-hover:scale-[1.03] group-hover:contrast-125 transition-all duration-700"
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                unoptimized
+                                style={{ width: '100%', height: 'auto' }}
+                                className="rounded-2xl transition-all duration-700 group-hover:scale-[1.02] shadow-lg"
                             />
-                            {/* Premium Glass Overlay on Hover */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 pointer-events-none">
-                                <span className="text-gold font-serif italic text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                    {img.title}
-                                </span>
-                            </div>
                         </div>
                     ))}
                 </div>

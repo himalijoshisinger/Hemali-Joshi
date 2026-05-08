@@ -9,18 +9,16 @@ export const metadata: Metadata = {
 };
 
 const brandImages = [
-    "/Brand Collabration/DSC04529.jpg",
-    "/Brand Collabration/DSC04537.jpg",
-    "/Brand Collabration/DSC04563.jpg",
-    "/Brand Collabration/DSC04653.jpg",
+    "/Brand Collabration/1000018417.jpg.jpeg",
+    "/Brand Collabration/1000018698.jpg.jpeg",
+    "/Brand Collabration/101.jpeg",
+    "/Brand Collabration/102.jpeg",
+    "/Brand Collabration/103.jpeg",
     "/Brand Collabration/DSC04684.jpg",
-    "/Brand Collabration/DSC04697.jpg",
-    "/Brand Collabration/DSC04859.jpg",
     "/Brand Collabration/DSC05859.jpg",
     "/Brand Collabration/DSC06658.jpg",
-    "/Brand Collabration/amazon.jpeg",
-    "/Brand Collabration/apple.jpeg",
-    "/Brand Collabration/music1.jpg"
+    "/Brand Collabration/DSC06010.jpg",
+    "/Brand Collabration/DSC04581.jpg"
 ];
 
 export default function BrandsGalleryPage() {
@@ -40,24 +38,27 @@ export default function BrandsGalleryPage() {
                     <div className="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
                 </div>
                 
-                {/* Pure CSS Masonry Grid */}
-                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6 mb-32">
+                {/* Fluid Masonry Grid - Grid ratio follows Image ratio */}
+                <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 mb-32">
                     {brandImages.map((src, index) => (
-                        <div key={index} className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer">
+                        <div 
+                            key={index} 
+                            className="break-inside-avoid relative group rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 shadow-2xl transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20"
+                        >
                             <Image
                                 src={src}
                                 alt={`Brand Collaboration by Himali Joshi - ${index + 1}`}
                                 width={800}
                                 height={1200}
-                                className="w-full h-auto object-cover filter contrast-[1.05] group-hover:scale-[1.03] group-hover:contrast-125 transition-all duration-700"
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                unoptimized
+                                style={{ width: '100%', height: 'auto' }}
+                                className="w-full h-auto object-cover transition-all duration-1000 group-hover:scale-105"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             />
-                            {/* Premium Glass Overlay on Hover */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 pointer-events-none">
-                                <span className="text-gold font-serif italic text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                    Premium Partner
-                                </span>
-                            </div>
+                            
+                            {/* Modern Glass Corner Accents */}
+                            <div className="absolute top-6 right-6 w-10 h-10 border-t-2 border-r-2 border-gold/0 group-hover:border-gold/40 transition-all duration-700 rounded-tr-xl pointer-events-none" />
+                            <div className="absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-gold/0 group-hover:border-gold/40 transition-all duration-700 rounded-bl-xl pointer-events-none" />
                         </div>
                     ))}
                 </div>

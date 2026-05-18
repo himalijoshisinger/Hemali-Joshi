@@ -10,7 +10,7 @@ export const youtubePosters = [
     },
     {
         id: 2,
-        src: "/assets/Concert.JPEG",
+        src: "/assets/Concert.jpeg",
         title: "Garba Special",
         channel: "Himali Joshi Official",
         href: "https://www.youtube.com/shorts/FhJxedjWKJM",

@@ -42,7 +42,7 @@ export default function CelebritiesGalleryPage() {
                             className="break-inside-avoid relative group rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl transition-all duration-500 hover:border-gold/30 hover:shadow-gold/10"
                         >
                             <Image
-                                src={src}
+                                src={encodeURI(src)}
                                 alt={`Moment with Celebrity - ${index + 1}`}
                                 width={800}
                                 height={1200}

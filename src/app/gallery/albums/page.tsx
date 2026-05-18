@@ -50,7 +50,7 @@ export default function AlbumsGalleryPage() {
                             className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer"
                         >
                             <Image
-                                src={img.src}
+                                src={encodeURI(img.src)}
                                 alt={`Own Album by Himali Joshi - ${img.title}`}
                                 width={800}
                                 height={1200}

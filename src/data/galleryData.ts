@@ -17,8 +17,8 @@ export const galleryImages = [
     { id: 20, src: "/assets/Gal/IMG_7094.JPG", category: "concerts" },
     { id: 23, src: "/assets/Gal/IMG_7097.JPG", category: "albums" },
     { id: 24, src: "/assets/Gal/IMG_7098.JPG", category: "albums" },
-    { id: 25, src: "/assets/Gal/IMG_7069%202.JPG", category: "wedding" },
-    { id: 26, src: "/assets/Gal/IMG_7077%202.JPG", category: "concerts" },
+    { id: 25, src: "/assets/Gal/IMG_7069 2.JPG", category: "wedding" },
+    { id: 26, src: "/assets/Gal/IMG_7077 2.JPG", category: "concerts" },
 
     // New Categories
     { id: 28, src: "/assets/portrait-1.jpg", category: "navratri" },
@@ -38,6 +38,6 @@ export const galleryImages = [
     { id: 42, src: "/Celebrites/cel 1.jpeg", category: "celebrities" },
     { id: 43, src: "/Celebrites/cel 2.jpeg", category: "celebrities" },
     { id: 44, src: "/Celebrites/cel 3.jpeg", category: "celebrities" },
-    { id: 45, src: "/Celebrites/IMG_7083.JPG", category: "celebrities" },
-    { id: 46, src: "/Celebrites/WhatsApp Image 2026-04-22 at 12.09.14 PM.jpeg", category: "celebrities" },
+    { id: 45, src: "/Celebrites/cel 4.jpeg", category: "celebrities" },
+    { id: 46, src: "/Celebrites/cel 5.jpeg", category: "celebrities" },
 ];

@@ -43,9 +43,9 @@ export default function BrandsGalleryPage() {
                         <div 
                             key={index} 
                             className="break-inside-avoid relative group rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 shadow-2xl transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20"
-                        >
+                        >     
                             <Image
-                                src={src}
+                                src={encodeURI(src)}
                                 alt={`Brand Collaboration by Himali Joshi - ${index + 1}`}
                                 width={800}
                                 height={1200}

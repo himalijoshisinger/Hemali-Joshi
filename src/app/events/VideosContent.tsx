@@ -15,17 +15,13 @@ export default function VideosContent() {
         { id: 2, src: "/assets/Gal/videos/cbbb1f8b-f7fa-4624-9382-f8d163932229.MP4", title: "Music You Can Feel", desc: "A raw, acoustic rendition of classic hits." },
         { id: 3, src: "/assets/Rehearsal.mp4", poster: "/assets/Poster10.png", title: "Rehearsal", desc: "Behind the scenes access to the artist's life." },
         { id: 4, src: "/assets/Gal/videos/WEDDING REEL (19-12-2024)-1.MP4", title: "Vibes", desc: "Magical musical moments from recent weddings." },
-        { id: 5, src: "/assets/Gal/videos/Himali Joshi-1.MP4", title: "Classical Fusion", desc: "Blending traditional classical notes with modern beats." },
-        { id: 6, src: "/assets/Gal/videos/3ea16fb3-b9e3-4bf2-a14c-55e5eb3dcc3b.MP4", title: "Soulful Rendition", desc: "Deep, emotional vocals that touch the soul." },
-        { id: 7, src: "/assets/Gal/videos/DRFT 4 .MP4", title: "Cinematic Journey", desc: "A visual masterpiece capturing the essence of music." },
-        { id: 8, src: "/assets/Audience.mp4", title: "Crowd Energy", desc: "Fans lighting up the arena with their energy." },
-        { id: 9, src: "/assets/Audience.mp4", title: "Singing Along", desc: "A beautiful moment where the audience takes over." },
-        { id: 10, src: "/assets/Audience.mp4", title: "Unforgettable Vibes", desc: "The pure joy of a live musical connection." },
+        { id: 7, src: "/assets/kanodia.mp4", title: "Mona Thiba Kanodia", desc: "A beautiful review and appreciation from the renowned actress." },
         { id: 11, src: "/assets/Audience.mp4", title: "Fan Moments", desc: "A glimpse of the love and support from amazing fans." },
+        { id: 12, src: "/assets/vid2.mp4", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show." },
     ];
 
     // Featured video logic
-    const featuredVideo = videos[6];
+    const featuredVideo = videos[4];
     const [featuredSrc, setFeaturedSrc] = useState(featuredVideo.src);
 
     useEffect(() => {
@@ -141,7 +137,7 @@ export default function VideosContent() {
                         <h3 className="text-3xl md:text-4xl font-serif text-white">What People <span className="italic text-gold">Say</span></h3>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {videos.filter((_, i) => i >= 4 && i < 7).map((vid) => (
+                        {videos.filter((_, i) => i === 4).map((vid) => (
                             <ArtisticVideoCard
                                 key={vid.id}
                                 src={vid.src}
@@ -160,7 +156,7 @@ export default function VideosContent() {
                         <h3 className="text-3xl md:text-4xl font-serif text-white">Audience <span className="italic text-gold">Love</span></h3>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {videos.filter((_, i) => i >= 7).map((vid) => (
+                        {videos.filter((_, i) => i >= 5).map((vid) => (
                             <ArtisticVideoCard
                                 key={vid.id}
                                 src={vid.src}

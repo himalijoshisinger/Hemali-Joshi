@@ -79,9 +79,9 @@ export default function ToursContent() {
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[280px] bg-maroon/10 blur-[100px] pointer-events-none rounded-full" />
                                     <div className="relative w-full h-full">
                                         {[
-                                            { src: "ratri1.JPG", rotate: -12, left: "0%", top: "5%", z: 10, label: "London Dreams", delay: 0 },
-                                            { src: "ratri3.JPG", rotate: 15, left: "52%", top: "-5%", z: 20, label: "Performance Night", delay: 0.2 },
-                                            { src: "ratri2.JPG", rotate: -4, left: "26%", top: "25%", z: 30, label: "UK Tour Moments", delay: 0.1 }
+                                            { src: "/assets/Bansi/2024.jpeg", rotate: -12, left: "0%", top: "5%", z: 10, label: "London Dreams", delay: 0 },
+                                            { src: "/assets/Bansi/20251.jpeg", rotate: 15, left: "52%", top: "-5%", z: 20, label: "Performance Night", delay: 0.2 },
+                                            { src: "/assets/Bansi/20252.jpeg", rotate: -4, left: "26%", top: "25%", z: 30, label: "UK Tour Moments", delay: 0.1 }
                                         ].map((img, idx) => (
                                             <motion.div
                                                 key={idx}
@@ -107,7 +107,7 @@ export default function ToursContent() {
                                                 style={{ zIndex: img.z, ...parallaxStyle }}
                                             >
                                                 <img
-                                                    src={`/assets/tours/ratri/${img.src}`}
+                                                    src={img.src}
                                                     alt={img.label}
                                                     className="w-full h-full object-cover"
                                                 />

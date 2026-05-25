@@ -11,14 +11,14 @@ export default function VideosContent() {
     const [isMuted, setIsMuted] = useState(true);
 
     const videos = [
-        { id: 1, src: "/assets/Gal/videos/319267f0-a223-4356-b981-c6d6cd42cedf.MP4", title: "Live Concert Highlight", desc: "Experience the energy of the live stage performance." },
-        { id: 2, src: "/assets/Gal/videos/cbbb1f8b-f7fa-4624-9382-f8d163932229.MP4", title: "Music You Can Feel", desc: "A raw, acoustic rendition of classic hits." },
+        { id: 1, src: "/assets/Gal/videos/319267f0-a223-4356-b981-c6d6cd42cedf.MP4", poster: "/assets/concert.png", title: "Live Concert Highlight", desc: "Experience the energy of the live stage performance." },
+        { id: 2, src: "/assets/Gal/videos/cbbb1f8b-f7fa-4624-9382-f8d163932229.MP4", poster: "/assets/splash-poster.jpg", title: "Music You Can Feel", desc: "A raw, acoustic rendition of classic hits." },
         { id: 3, src: "/assets/Rehearsal.mp4", poster: "/assets/Poster10.png", title: "Rehearsal", desc: "Behind the scenes access to the artist's life." },
-        { id: 4, src: "/assets/Gal/videos/WEDDING REEL (19-12-2024)-1.MP4", title: "Vibes", desc: "Magical musical moments from recent weddings." },
-        { id: 7, src: "/assets/Gal/videos/DRFT 4 .MP4", title: "Cinematic Journey", desc: "A visual masterpiece capturing the essence of music." },
-        { id: 13, src: "/assets/kanodia.mp4", title: "Mona Thiba Kanodia", desc: "A beautiful review and appreciation from the renowned actress." },
-        { id: 11, src: "/assets/Audience.mp4", title: "Fan Moments", desc: "A glimpse of the love and support from amazing fans." },
-        { id: 12, src: "/assets/vid2.mp4", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show." },
+        { id: 4, src: "/assets/Gal/videos/WEDDING REEL (19-12-2024)-1.MP4", poster: "/assets/Wedding.png", title: "Vibes", desc: "Magical musical moments from recent weddings." },
+        { id: 7, src: "/assets/Gal/videos/DRFT 4 .MP4", poster: "/assets/Poster11.png", title: "Cinematic Journey", desc: "A visual masterpiece capturing the essence of music." },
+        { id: 13, src: "/assets/kanodia.mp4", poster: "/assets/Client.png", title: "Mona Thiba Kanodia", desc: "A beautiful review and appreciation from the renowned actress." },
+        { id: 11, src: "/assets/Audience.mp4", poster: "/assets/Client1.png", title: "Fan Moments", desc: "A glimpse of the love and support from amazing fans." },
+        { id: 12, src: "/assets/vid2.mp4", poster: "/assets/splash-full.jpg", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show." },
     ];
 
     // Featured video logic
@@ -26,13 +26,15 @@ export default function VideosContent() {
     const [featuredSrc, setFeaturedSrc] = useState(featuredVideo.src);
 
     useEffect(() => {
-        if (getDevicePower() === "low") {
-            setFeaturedSrc(featuredVideo.src.replace(".MP4", "_low.mp4"));
+        if (getDevicePower() === "low" && featuredVideo.src.includes("hj2.mp4")) {
+            setFeaturedSrc(featuredVideo.src.replace(".MP4", "_low.mp4").replace(".mp4", "_low.mp4"));
+        } else {
+            setFeaturedSrc(featuredVideo.src);
         }
     }, [featuredVideo.src]);
 
     const getOptimalSrc = (src: string) => {
-        if (getDevicePower() === "low" && src.toLowerCase().endsWith(".mp4")) {
+        if (getDevicePower() === "low" && src.includes("hj2.mp4")) {
             return src.replace(".MP4", "_low.mp4").replace(".mp4", "_low.mp4");
         }
         return src;
@@ -147,6 +149,7 @@ export default function VideosContent() {
                                 onClick={() => setSelectedVideo(getOptimalSrc(vid.src))}
                                 year="2024"
                                 tag="Review"
+                                poster={(vid as any).poster}
                             />
                         ))}
                     </div>
@@ -166,6 +169,7 @@ export default function VideosContent() {
                                 onClick={() => setSelectedVideo(getOptimalSrc(vid.src))}
                                 year="2024"
                                 tag="Audience"
+                                poster={(vid as any).poster}
                             />
                         ))}
                     </div>

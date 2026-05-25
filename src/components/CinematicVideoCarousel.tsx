@@ -27,7 +27,7 @@ const VIDEOS = [
     {
         id: 4,
         title: "Wedding Event Review",
-        thumbnail: "",
+        thumbnail: "/assets/News/sandesh.jpeg",
         videoUrl: "/assets/News.mp4",
     },
 ];

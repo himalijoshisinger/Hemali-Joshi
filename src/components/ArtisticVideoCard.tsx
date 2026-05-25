@@ -22,12 +22,10 @@ export default function ArtisticVideoCard({ src, title, description, onClick, ye
     const [actualSrc, setActualSrc] = useState(src);
 
     useEffect(() => {
-        if (getDevicePower() === "low") {
-            // Check for both .MP4 and .mp4 and handle the _low suffix
-            if (src.toLowerCase().endsWith(".mp4")) {
-                const ext = src.slice(-4);
-                setActualSrc(src.slice(0, -4) + "_low.mp4");
-            }
+        if (getDevicePower() === "low" && src.includes("hj2.mp4")) {
+            setActualSrc("/assets/hj2_low.mp4");
+        } else {
+            setActualSrc(src);
         }
     }, [src]);
 

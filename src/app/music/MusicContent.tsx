@@ -63,7 +63,7 @@ export default function MusicContent() {
                 ...item,
                 audio: "/assets/audio/rang_lagyo.m4a",
                 title: "Rang Lagyo",
-                cover: "/assets/rang.png"
+                cover: "/assets/rang_lagyo_new.jpg"
             };
         }
         if (index === 2) {

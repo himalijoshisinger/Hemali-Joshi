@@ -17,7 +17,7 @@ export default function VideosContent() {
         { id: 4, src: "/assets/Gal/videos/WEDDING REEL (19-12-2024)-1.MP4", poster: "/assets/wedding_vibes.jpg", title: "Wedding Vibes", desc: "Magical musical moments from recent weddings.", objectFit: "contain" },
         { id: 7, src: "/assets/Gal/videos/DRFT 4 .MP4", poster: "/assets/Poster11.png", title: "Musical Journey", desc: "Our mission is simple: to transform every event into a unique musical journey that leaves lasting impressions and cherished memories." },
         { id: 13, src: "/assets/kanodia.mp4", poster: "/assets/Client.png", title: "Mona Thiba Kanodia", desc: "A beautiful review and appreciation from the renowned actress." },
-        { id: 14, src: "/assets/News.mp4", poster: "/assets/News/sandesh.jpeg", title: "Media spot in UK", desc: "Featured in news media for her unique garba releases and musical achievements." },
+        { id: 14, src: "/assets/News.mp4", poster: "/assets/media_uk.jpg", title: "Media spot in UK", desc: "Featured in news media for her unique garba releases and musical achievements.", objectFit: "contain" },
         { id: 11, src: "/assets/Audience.mp4", poster: "/assets/Client1.png", title: "Fan Moments", desc: "A glimpse of the love and support from amazing fans." },
         { id: 12, src: "/assets/vid2.mp4", poster: "/assets/splash-full.jpg", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show." },
     ];

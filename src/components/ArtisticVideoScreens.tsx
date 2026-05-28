@@ -25,9 +25,16 @@ const VIDEOS = [
 export default function ArtisticVideoScreens() {
     const containerRef = useRef<HTMLElement>(null);
     const [isLowPower, setIsLowPower] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         setIsLowPower(getDevicePower() === "low");
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     const { scrollYProgress } = useScroll({
@@ -99,7 +106,7 @@ export default function ArtisticVideoScreens() {
                         href="https://www.youtube.com/watch?v=ESR-dgpVeMQ"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ y: -10 }}
+                        whileHover={isMobile ? {} : { y: -10 }}
                         className="relative group w-full max-w-sm lg:max-w-[18rem] xl:max-w-sm xl:-mt-20"
                     >
                         {/* Roller Bar */}
@@ -111,11 +118,11 @@ export default function ArtisticVideoScreens() {
 
                         {/* Screen Canvas (Scroll Animated) */}
                         <motion.div
-                            style={{ scaleY: projectorScaleY, opacity: 1 }}
-                            className="relative bg-white pt-[56.25%] shadow-[0_20px_50px_rgba(255,255,255,0.05)] border-b-8 border-gray-200 overflow-hidden transform-gpu origin-top transition-transform duration-500 group-hover:scale-[1.02]"
+                            style={isMobile ? {} : { scaleY: projectorScaleY }}
+                            className={`relative bg-white pt-[56.25%] shadow-[0_20px_50px_rgba(255,255,255,0.05)] border-b-8 border-gray-200 overflow-hidden transform-gpu origin-top transition-transform duration-500 group-hover:scale-[1.02] ${isMobile ? "scale-y-100" : ""}`}
                         >
                             {/* Content */}
-                            <motion.div style={{ opacity: projectorOpacity }} className="absolute inset-2 bg-black overflow-hidden">
+                            <motion.div style={isMobile ? {} : { opacity: projectorOpacity }} className="absolute inset-2 bg-black overflow-hidden">
                                 <img
                                     src="/assets/Garba1.png"
                                     alt="Projector Video"
@@ -141,31 +148,33 @@ export default function ArtisticVideoScreens() {
                         href={CHANNEL_SUBSCRIBE_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={isMobile ? {} : { scale: 1.05 }}
                         className="relative group w-full max-w-xl lg:max-w-lg xl:max-w-2xl z-20"
                     >
                         {/* TV Frame */}
                         <motion.div
-                            style={{
+                            style={isMobile ? {} : {
                                 boxShadow: tvBoxShadow,
                                 willChange: "box-shadow"
                             }}
-                            className="relative bg-[#0a0a0a] rounded-xl p-2 border border-white/10 transition-shadow duration-500 group-hover:shadow-[0_0_80px_rgba(255,255,255,0.2)] group-hover:border-white/20 transform-gpu"
+                            className={`relative bg-[#0a0a0a] rounded-xl p-2 border border-white/10 transition-all duration-500 group-hover:shadow-[0_0_80px_rgba(255,255,255,0.2)] group-hover:border-white/20 transform-gpu ${isMobile ? "shadow-[0_0_50px_rgba(59,130,246,0.1)] border-white/15" : ""}`}
                         >
                             {/* Screen */}
                             <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden border border-white/5 flex items-center justify-center">
 
                                 {/* Turn On Animation Layer */}
-                                <motion.div
-                                    style={{ scaleY: tvTurnOnScaleY, willChange: "transform" }}
-                                    className="absolute inset-0 w-full h-full bg-white origin-center z-0"
-                                />
+                                {!isMobile && (
+                                    <motion.div
+                                        style={{ scaleY: tvTurnOnScaleY, willChange: "transform" }}
+                                        className="absolute inset-0 w-full h-full bg-white origin-center z-0"
+                                    />
+                                )}
 
                                 <motion.img
-                                    style={{ opacity: tvVideoOpacity, willChange: "opacity" }}
+                                    style={isMobile ? {} : { opacity: tvVideoOpacity }}
                                     src={`https://img.youtube.com/vi/${VIDEOS[0].id}/hqdefault.jpg`}
                                     alt="Smart TV Video"
-                                    className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-10"
+                                    className={`absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-10 ${isMobile ? "opacity-90" : ""}`}
                                 />
                                 {/* Glossy Reflection */}
                                 <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent skew-y-[-10deg] origin-top-left pointer-events-none z-20" />
@@ -194,8 +203,8 @@ export default function ArtisticVideoScreens() {
                         href="https://www.youtube.com/watch?v=JwYavPirAuE"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ x: vintageTvX, rotate: vintageTvRotate, willChange: "transform" }}
-                        whileHover={{ rotate: 0, scale: 1.05 }}
+                        style={isMobile ? {} : { x: vintageTvX, rotate: vintageTvRotate }}
+                        whileHover={isMobile ? {} : { rotate: 0, scale: 1.05 }}
                         className="relative group w-full max-w-xs lg:max-w-[16rem] xl:max-w-xs xl:mt-20 transform-gpu"
                     >
                         {/* Wooden Frame */}
@@ -213,13 +222,12 @@ export default function ArtisticVideoScreens() {
                                     {/* The actual screen area */}
                                     <div className="relative pt-[75%] bg-black rounded-xl overflow-hidden border border-white/5 z-10 box-shadow-[inset_0_0_20px_rgba(255,255,255,0.2)]">
                                         <motion.img
-                                            style={{
+                                            style={isMobile ? {} : {
                                                 filter: useTransform(vintageTvSepia, s => `contrast(1.25) sepia(${s}) brightness(${vintageTvBrightness.get()}) opacity(${vintageTvOpacity.get()})`),
-                                                willChange: "filter"
                                             }}
                                             src="/assets/img1.png"
                                             alt="Vintage TV Video"
-                                            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:!sepia-0 transition-all duration-700"
+                                            className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:!sepia-0 transition-all duration-700 ${isMobile ? "contrast-[1.15] sepia-[0.2] opacity-90" : ""}`}
                                         />
 
                                         {/* Scanlines Effect */}

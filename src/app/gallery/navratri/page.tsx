@@ -15,7 +15,8 @@ const navratriImages = [
     "/Navratri/Nav 4.jpeg",
     "/Navratri/Nav 5.jpeg",
     "/Navratri/Nav 6.jpeg",
-    "/assets/garba4.png"
+    "/assets/garba4.png",
+    "/Navratri/Nav 7.jpeg"
 ];
 
 export default function NavratriGalleryPage() {

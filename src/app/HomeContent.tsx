@@ -42,8 +42,8 @@ export default function HomeContent() {
                 <section className="py-12 md:py-24 px-4 md:px-6 container mx-auto text-center">
                     <h1 className="font-serif text-[clamp(2rem,5vw,3.5rem)] mb-6 md:mb-8 leading-tight">Professional <span className="text-gold">Live Performer</span> & Music Artist in India</h1>
                     <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8 md:mb-10 px-2 md:px-4">
-                        Himali Joshi, recognized as the <strong>best singer in Vadodara, Gujarat</strong>, weaves emotions into melodies, bridging the gap between classical traditions and modern soundscapes.
-                        As a top <strong>playback singer and event performer</strong>, she has worked with <strong>Yash Raj Films</strong> and is globally sought after for international bookings.
+                        Himali Joshi, recognized as the <strong>best singer in Vadodara, Gujarat</strong>, blends emotions into melodies, seamlessly connecting classical traditions with modern soundscapes.
+                        As a <strong>renowned playback singer and live event performer</strong>, she has lent her voice to album recordings associated with <strong>Yash Raj Films</strong> and is globally sought after for international bookings.
                     </p>
                     <Link href="/about" className="inline-flex items-center gap-2 text-gold border-b border-gold pb-1 hover:text-white hover:border-white transition-all uppercase tracking-widest text-sm font-bold">
                         Read Full Biography <ArrowRight size={16} />

@@ -71,7 +71,7 @@ export default function MusicContent() {
                 ...item,
                 audio: "/assets/audio/pehla_nasha.m4a",
                 title: "Pehla Nasha",
-                cover: "/assets/pehlanasha.png"
+                cover: "/assets/pehla_nasha_new.jpg"
             };
         }
         if (index === 3) {

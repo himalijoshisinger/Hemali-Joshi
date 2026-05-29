@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import NewsIntro from "@/components/NewsIntro";
 import Footer from "@/components/Footer";
 import { ExternalLink, Calendar, Newspaper, Play, Star } from "lucide-react";
 
 const GENERAL_NEWS = [
     { id: 4, src: "/assets/News/article_interview.jpg", title: "Press Clipping", source: "Times Of India", date: "Interview", span: "md:col-span-2 md:row-span-2" },
+    { id: 8, src: "/assets/News/media_collage_2.jpg", title: "Press Highlights", source: "Media Highlights", date: "Feature", span: "col-span-1" },
+    { id: 9, src: "/assets/News/media_collage_1.jpg", title: "Media Coverage Compilation", source: "News Snippets", date: "Compilation", span: "col-span-1" },
     { id: 2, src: "/assets/News/Spark news .jpeg", title: "Media Spotlight", source: "Spark News", date: "Coverage", span: "col-span-1" },
     { id: 1, src: "/assets/News/sandesh.jpeg", title: "Cultural Achievements", source: "Sandesh News", date: "Feature", span: "col-span-1" },
     { id: 5, src: "/assets/patan.png", title: "Theatrical Performance", source: "Patan News", date: "Feature", span: "col-span-1" },
@@ -18,17 +19,11 @@ const GENERAL_NEWS = [
 const ALL_NEWS_ITEMS = [...GENERAL_NEWS];
 
 export default function NewsContent() {
-    const [showIntro, setShowIntro] = useState(true);
     const [selectedArticle, setSelectedArticle] = useState<typeof ALL_NEWS_ITEMS[0] | null>(null);
 
     return (
         <main className="min-h-screen bg-black text-white selection:bg-gold selection:text-black">
-            {showIntro && (
-                <NewsIntro onComplete={() => setShowIntro(false)} />
-            )}
-
-            {!showIntro && (
-                <div className="pt-24 animate-in fade-in duration-1000">
+            <div className="pt-24 animate-in fade-in duration-1000">
 
                     {/* Header */}
                     <section className="container mx-auto px-6 py-16 text-center">
@@ -388,7 +383,6 @@ export default function NewsContent() {
                         </div>
                     )}
                 </div>
-            )}
         </main>
     );
 }

@@ -37,7 +37,7 @@ const ArtisticScrollTitle = ({ text, className = "" }: ArtisticScrollTitleProps)
                 />
 
                 {/* Background Shadow/Ghost Text */}
-                <h2 className="font-signature text-7xl md:text-9xl text-white/5 select-none text-center">
+                <h2 className="font-signature text-[clamp(1.8rem,7vw,6rem)] text-white/5 select-none text-center whitespace-nowrap">
                     {text}
                 </h2>
 
@@ -46,7 +46,7 @@ const ArtisticScrollTitle = ({ text, className = "" }: ArtisticScrollTitleProps)
                     className="absolute inset-0 px-4 overflow-hidden"
                     style={{ width }}
                 >
-                    <h2 className="font-signature text-7xl md:text-9xl text-gold whitespace-nowrap drop-shadow-[0_0_20px_rgba(212,175,55,0.4)] text-center">
+                    <h2 className="font-signature text-[clamp(1.8rem,7vw,6rem)] text-gold whitespace-nowrap drop-shadow-[0_0_20px_rgba(212,175,55,0.4)] text-center">
                         {text}
                     </h2>
                 </motion.div>

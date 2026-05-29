@@ -26,11 +26,13 @@ export default function ArtisticVideoScreens() {
     const containerRef = useRef<HTMLElement>(null);
     const [isLowPower, setIsLowPower] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
         setIsLowPower(getDevicePower() === "low");
         const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < 1024);
         };
         checkMobile();
         window.addEventListener('resize', checkMobile);
@@ -112,7 +114,7 @@ export default function ArtisticVideoScreens() {
                         href="https://www.youtube.com/watch?v=ESR-dgpVeMQ"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={isMobile ? {} : { y: -10 }}
+                        whileHover={mounted && !isMobile ? { y: -10 } : {}}
                         className="relative group w-full max-w-sm lg:max-w-[18rem] xl:max-w-sm xl:-mt-20"
                     >
                         {/* Roller Bar */}
@@ -122,28 +124,48 @@ export default function ArtisticVideoScreens() {
                         <div className="absolute -top-12 left-[10%] w-0.5 h-12 bg-white/20" />
                         <div className="absolute -top-12 right-[10%] w-0.5 h-12 bg-white/20" />
 
-                        {/* Screen Canvas (Scroll Animated) */}
-                        <motion.div
-                            style={isMobile ? {} : { scaleY: projectorScaleY }}
-                            className={`relative bg-white pt-[56.25%] shadow-[0_20px_50px_rgba(255,255,255,0.05)] border-b-8 border-gray-200 overflow-hidden transform-gpu origin-top transition-transform duration-500 group-hover:scale-[1.02] ${isMobile ? "scale-y-100" : ""}`}
-                        >
-                            {/* Content */}
-                            <motion.div style={isMobile ? {} : { opacity: projectorOpacity }} className="absolute inset-2 bg-black overflow-hidden">
-                                <img
-                                    src="/assets/Garba1.png"
-                                    alt="Projector Video"
-                                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                />
-                                {/* Light Beam effect over image */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent mix-blend-overlay pointer-events-none" />
-                            </motion.div>
+                        {/* Screen Canvas (Scroll Animated on Desktop) */}
+                        {mounted && !isMobile ? (
+                            <motion.div
+                                style={{ scaleY: projectorScaleY }}
+                                className="relative bg-white pt-[56.25%] shadow-[0_20px_50px_rgba(255,255,255,0.05)] border-b-8 border-gray-200 overflow-hidden transform-gpu origin-top transition-transform duration-500 group-hover:scale-[1.02]"
+                            >
+                                {/* Content */}
+                                <motion.div style={{ opacity: projectorOpacity }} className="absolute inset-2 bg-black overflow-hidden">
+                                    <img
+                                        src="/assets/Garba1.png"
+                                        alt="Projector Video"
+                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                    />
+                                    {/* Light Beam effect over image */}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent mix-blend-overlay pointer-events-none" />
+                                </motion.div>
 
-                            {/* Bottom Weight Bar */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-300 via-white to-gray-300" />
-                        </motion.div>
+                                {/* Bottom Weight Bar */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-300 via-white to-gray-300" />
+                            </motion.div>
+                        ) : (
+                            <div className="relative bg-white pt-[56.25%] shadow-[0_20px_50px_rgba(255,255,255,0.05)] border-b-8 border-gray-200 overflow-hidden">
+                                {/* Content */}
+                                <div className="absolute inset-2 bg-black overflow-hidden">
+                                    <img
+                                        src="/assets/Garba1.png"
+                                        alt="Projector Video"
+                                        className="w-full h-full object-cover opacity-90"
+                                    />
+                                    {/* Light Beam effect over image */}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent mix-blend-overlay pointer-events-none" />
+                                </div>
+
+                                {/* Bottom Weight Bar */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-300 via-white to-gray-300" />
+                            </div>
+                        )}
 
                         {/* Projection Light source ray */}
-                        <motion.div style={{ opacity: projectorOpacity }} className="absolute -top-20 left-1/2 -translate-x-1/2 w-4 h-32 bg-gradient-to-b from-white/5 to-transparent blur-xl -z-10" />
+                        {mounted && !isMobile && (
+                            <motion.div style={{ opacity: projectorOpacity }} className="absolute -top-20 left-1/2 -translate-x-1/2 w-4 h-32 bg-gradient-to-b from-white/5 to-transparent blur-xl -z-10" />
+                        )}
                         <div className="mt-8 text-center font-serif text-2xl text-gold italic tracking-wide">
                             Non Stop Garba
                         </div>
@@ -154,127 +176,206 @@ export default function ArtisticVideoScreens() {
                         href={CHANNEL_SUBSCRIBE_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={isMobile ? {} : { scale: 1.05 }}
+                        whileHover={mounted && !isMobile ? { scale: 1.05 } : {}}
                         className="relative group w-full max-w-xl lg:max-w-lg xl:max-w-2xl z-20"
                     >
                         {/* TV Frame */}
-                        <motion.div
-                            style={isMobile ? {} : {
-                                boxShadow: tvBoxShadow,
-                                willChange: "box-shadow"
-                            }}
-                            className={`relative bg-[#0a0a0a] rounded-xl p-2 border border-white/10 transition-all duration-500 group-hover:shadow-[0_0_80px_rgba(255,255,255,0.2)] group-hover:border-white/20 transform-gpu ${isMobile ? "shadow-[0_0_50px_rgba(59,130,246,0.1)] border-white/15" : ""}`}
-                        >
-                            {/* Screen */}
-                            <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden border border-white/5 flex items-center justify-center">
+                        {mounted && !isMobile ? (
+                            <motion.div
+                                style={{
+                                    boxShadow: tvBoxShadow,
+                                    willChange: "box-shadow"
+                                }}
+                                className="relative bg-[#0a0a0a] rounded-xl p-2 border border-white/10 transition-all duration-500 group-hover:shadow-[0_0_80px_rgba(255,255,255,0.2)] group-hover:border-white/20 transform-gpu"
+                            >
+                                {/* Screen */}
+                                <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden border border-white/5 flex items-center justify-center">
 
-                                {/* Turn On Animation Layer */}
-                                {!isMobile && (
+                                    {/* Turn On Animation Layer */}
                                     <motion.div
                                         style={{ scaleY: tvTurnOnScaleY, willChange: "transform" }}
                                         className="absolute inset-0 w-full h-full bg-white origin-center z-0"
                                     />
-                                )}
 
-                                <motion.img
-                                    style={isMobile ? {} : { opacity: tvVideoOpacity }}
-                                    src={`https://img.youtube.com/vi/${VIDEOS[0].id}/hqdefault.jpg`}
-                                    alt="Smart TV Video"
-                                    className={`absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-10 ${isMobile ? "opacity-90" : ""}`}
-                                />
-                                {/* Glossy Reflection */}
-                                <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent skew-y-[-10deg] origin-top-left pointer-events-none z-20" />
+                                    <motion.img
+                                        style={{ opacity: tvVideoOpacity }}
+                                        src={`https://img.youtube.com/vi/${VIDEOS[0].id}/hqdefault.jpg`}
+                                        alt="Smart TV Video"
+                                        className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 z-10"
+                                    />
+                                    {/* Glossy Reflection */}
+                                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent skew-y-[-10deg] origin-top-left pointer-events-none z-20" />
 
-                                {/* Overlay Play Button */}
-                                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
-                                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                                        <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                                    {/* Overlay Play Button */}
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
+                                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                                            <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* TV Stand/Base */}
-                            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-6 flex flex-col items-center">
-                                <div className="w-4 h-4 bg-gradient-to-b from-neutral-800 to-neutral-900 border-x border-white/10" />
-                                <div className="w-full h-2 bg-gradient-to-b from-neutral-700 to-neutral-900 rounded-b-md border border-white/10 border-t-0 shadow-lg" />
+                                {/* TV Stand/Base */}
+                                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-6 flex flex-col items-center">
+                                    <div className="w-4 h-4 bg-gradient-to-b from-neutral-800 to-neutral-900 border-x border-white/10" />
+                                    <div className="w-full h-2 bg-gradient-to-b from-neutral-700 to-neutral-900 rounded-b-md border border-white/10 border-t-0 shadow-lg" />
+                                </div>
+                            </motion.div>
+                        ) : (
+                            <div className="relative bg-[#0a0a0a] rounded-xl p-2 border border-white/15 shadow-[0_0_50px_rgba(59,130,246,0.1)]">
+                                {/* Screen */}
+                                <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden border border-white/5 flex items-center justify-center">
+                                    <img
+                                        src={`https://img.youtube.com/vi/${VIDEOS[0].id}/hqdefault.jpg`}
+                                        alt="Smart TV Video"
+                                        className="absolute inset-0 w-full h-full object-cover opacity-95"
+                                    />
+                                    {/* Glossy Reflection */}
+                                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent skew-y-[-10deg] origin-top-left pointer-events-none z-20" />
+
+                                    {/* Overlay Play Button */}
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 z-30">
+                                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                                            <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* TV Stand/Base */}
+                                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-6 flex flex-col items-center">
+                                    <div className="w-4 h-4 bg-gradient-to-b from-neutral-800 to-neutral-900 border-x border-white/10" />
+                                    <div className="w-full h-2 bg-gradient-to-b from-neutral-700 to-neutral-900 rounded-b-md border border-white/10 border-t-0 shadow-lg" />
+                                </div>
                             </div>
-                        </motion.div>
+                        )}
                         <div className="mt-8 text-center font-serif text-2xl text-gold italic tracking-wide">
                             Kacchi song
                         </div>
                     </motion.a>
 
                     {/* 3. Vintage TV (Right - Seated) */}
-                    <motion.a
-                        href="https://www.youtube.com/watch?v=JwYavPirAuE"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={isMobile ? {} : { x: vintageTvX, rotate: vintageTvRotate }}
-                        whileHover={isMobile ? {} : { rotate: 0, scale: 1.05 }}
-                        className="relative group w-full max-w-xs lg:max-w-[16rem] xl:max-w-xs xl:mt-20 transform-gpu"
-                    >
-                        {/* Wooden Frame */}
-                        <div className="relative bg-[#5a3a22] rounded-[2rem] p-4 lg:p-6 shadow-[inset_0_0_20px_rgba(0,0,0,0.8),0_20px_40px_rgba(0,0,0,0.6)] border-4 border-[#3a2212] overflow-hidden">
+                    {mounted && !isMobile ? (
+                        <motion.a
+                            href="https://www.youtube.com/watch?v=JwYavPirAuE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ x: vintageTvX, rotate: vintageTvRotate }}
+                            whileHover={{ rotate: 0, scale: 1.05 }}
+                            className="relative group w-full max-w-xs lg:max-w-[16rem] xl:max-w-xs xl:mt-20 transform-gpu"
+                        >
+                            {/* Wooden Frame */}
+                            <div className="relative bg-[#5a3a22] rounded-[2rem] p-4 lg:p-6 shadow-[inset_0_0_20px_rgba(0,0,0,0.8),0_20px_40px_rgba(0,0,0,0.6)] border-4 border-[#3a2212] overflow-hidden">
 
-                            {/* Wood Grain Texture Overlay */}
-                            <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
+                                {/* Wood Grain Texture Overlay */}
+                                <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
 
-                            <div className="flex gap-4">
-                                {/* CRT Screen */}
-                                <div className="flex-1 relative">
-                                    {/* Curved Bezel */}
-                                    <div className="absolute -inset-2 bg-neutral-900 rounded-[1.5rem] shadow-[inset_0_0_15px_rgba(0,0,0,1)]" />
+                                <div className="flex gap-4">
+                                    {/* CRT Screen */}
+                                    <div className="flex-1 relative">
+                                        {/* Curved Bezel */}
+                                        <div className="absolute -inset-2 bg-neutral-900 rounded-[1.5rem] shadow-[inset_0_0_15px_rgba(0,0,0,1)]" />
 
-                                    {/* The actual screen area */}
-                                    <div className="relative pt-[75%] bg-black rounded-xl overflow-hidden border border-white/5 z-10 box-shadow-[inset_0_0_20px_rgba(255,255,255,0.2)]">
-                                        <motion.img
-                                            style={isMobile ? {} : {
-                                                filter: vintageTvFilter,
-                                            }}
-                                            src="/assets/img1.png"
-                                            alt="Vintage TV Video"
-                                            className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:!sepia-0 transition-all duration-700 ${isMobile ? "contrast-[1.15] sepia-[0.2] opacity-90" : ""}`}
-                                        />
+                                        {/* The actual screen area */}
+                                        <div className="relative pt-[75%] bg-black rounded-xl overflow-hidden border border-white/5 z-10 box-shadow-[inset_0_0_20px_rgba(255,255,255,0.2)]">
+                                            <motion.img
+                                                style={{ filter: vintageTvFilter }}
+                                                src="/assets/img1.png"
+                                                alt="Vintage TV Video"
+                                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:!sepia-0 transition-all duration-700"
+                                            />
 
-                                        {/* Scanlines Effect */}
-                                        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)_50%,rgba(0,0,0,0.1)_50%,rgba(0,0,0,0.1))] bg-[length:100%_4px] pointer-events-none opacity-50" />
+                                            {/* Scanlines Effect */}
+                                            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)_50%,rgba(0,0,0,0.1)_50%,rgba(0,0,0,0.1))] bg-[length:100%_4px] pointer-events-none opacity-50" />
 
-                                        {/* CRT Glass Curvature Highlight */}
-                                        <div className="absolute inset-0 bg-radial-gradient from-white/10 via-transparent to-black/60 pointer-events-none" />
+                                            {/* CRT Glass Curvature Highlight */}
+                                            <div className="absolute inset-0 bg-radial-gradient from-white/10 via-transparent to-black/60 pointer-events-none" />
+                                        </div>
+                                    </div>
+
+                                    {/* Dials/Controls Area */}
+                                    <div className="w-12 flex flex-col items-center justify-around py-2 z-10 relative">
+                                        {/* Dial 1 */}
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 shadow-md border-2 border-gray-800 flex items-center justify-center transform group-hover:rotate-45 transition-transform duration-500">
+                                            <div className="w-1 h-3 bg-gray-800 -mt-3 rounded-full" />
+                                        </div>
+                                        {/* Dial 2 */}
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 shadow-md border-2 border-gray-800 flex items-center justify-center transform group-hover:-rotate-45 transition-transform duration-500 delay-100">
+                                            <div className="w-1 h-3 bg-gray-800 -mt-3 rounded-full" />
+                                        </div>
+                                        {/* Speaker Grill Holes */}
+                                        <div className="grid grid-cols-2 gap-1 mt-2">
+                                            {[...Array(6)].map((_, i) => (
+                                                <div key={i} className="w-1.5 h-1.5 rounded-full bg-black/60 shadow-inner" />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* Dials/Controls Area */}
-                                <div className="w-12 flex flex-col items-center justify-around py-2 z-10 relative">
-                                    {/* Dial 1 */}
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 shadow-md border-2 border-gray-800 flex items-center justify-center transform group-hover:rotate-45 transition-transform duration-500">
-                                        <div className="w-1 h-3 bg-gray-800 -mt-3 rounded-full" />
+                                {/* Antenna */}
+                                <div className="absolute -top-16 left-8 w-1 h-20 bg-gray-400 rotate-[-15deg] origin-bottom shadow-sm hidden md:block">
+                                    <div className="absolute -top-1 -left-1 w-3 h-3 rounded-full bg-gray-300" />
+                                </div>
+                                <div className="absolute -top-12 left-12 w-1 h-16 bg-gray-400 rotate-[30deg] origin-bottom shadow-sm hidden md:block">
+                                    <div className="absolute -top-1 -left-1 w-3 h-3 rounded-full bg-gray-300" />
+                                </div>
+                            </div>
+                            <div className="mt-8 text-center font-serif text-2xl text-gold italic tracking-wide">
+                                Raja na Kunvar
+                            </div>
+                        </motion.a>
+                    ) : (
+                        <a
+                            href="https://www.youtube.com/watch?v=JwYavPirAuE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative group w-full max-w-xs"
+                        >
+                            {/* Wooden Frame */}
+                            <div className="relative bg-[#5a3a22] rounded-[2rem] p-4 shadow-[inset_0_0_20px_rgba(0,0,0,0.8),0_20px_40px_rgba(0,0,0,0.6)] border-4 border-[#3a2212] overflow-hidden">
+
+                                {/* Wood Grain Texture Overlay */}
+                                <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
+
+                                <div className="flex gap-4">
+                                    {/* CRT Screen */}
+                                    <div className="flex-1 relative">
+                                        {/* Curved Bezel */}
+                                        <div className="absolute -inset-2 bg-neutral-900 rounded-[1.5rem]" />
+
+                                        {/* The actual screen area */}
+                                        <div className="relative pt-[75%] bg-black rounded-xl overflow-hidden border border-white/5 z-10">
+                                            <img
+                                                src="/assets/img1.png"
+                                                alt="Vintage TV Video"
+                                                className="absolute inset-0 w-full h-full object-cover contrast-[1.15] sepia-[0.2] opacity-90"
+                                            />
+                                            {/* Scanlines Effect */}
+                                            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)_50%,rgba(0,0,0,0.1)_50%,rgba(0,0,0,0.1))] bg-[length:100%_4px] pointer-events-none opacity-50" />
+                                            {/* CRT Glass Curvature Highlight */}
+                                            <div className="absolute inset-0 bg-radial-gradient from-white/10 via-transparent to-black/60 pointer-events-none" />
+                                        </div>
                                     </div>
-                                    {/* Dial 2 */}
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 shadow-md border-2 border-gray-800 flex items-center justify-center transform group-hover:-rotate-45 transition-transform duration-500 delay-100">
-                                        <div className="w-1 h-3 bg-gray-800 -mt-3 rounded-full" />
-                                    </div>
-                                    {/* Speaker Grill Holes */}
-                                    <div className="grid grid-cols-2 gap-1 mt-2">
-                                        {[...Array(6)].map((_, i) => (
-                                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-black/60 shadow-inner" />
-                                        ))}
+
+                                    {/* Dials/Controls Area */}
+                                    <div className="w-12 flex flex-col items-center justify-around py-2 z-10 relative">
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 shadow-md border-2 border-gray-800 flex items-center justify-center">
+                                            <div className="w-1 h-3 bg-gray-800 -mt-3 rounded-full" />
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 shadow-md border-2 border-gray-800 flex items-center justify-center">
+                                            <div className="w-1 h-3 bg-gray-800 -mt-3 rounded-full" />
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-1 mt-2">
+                                            {[...Array(6)].map((_, i) => (
+                                                <div key={i} className="w-1.5 h-1.5 rounded-full bg-black/60 shadow-inner" />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Antenna */}
-                            <div className="absolute -top-16 left-8 w-1 h-20 bg-gray-400 rotate-[-15deg] origin-bottom shadow-sm hidden md:block">
-                                <div className="absolute -top-1 -left-1 w-3 h-3 rounded-full bg-gray-300" />
+                            <div className="mt-8 text-center font-serif text-2xl text-gold italic tracking-wide">
+                                Raja na Kunvar
                             </div>
-                            <div className="absolute -top-12 left-12 w-1 h-16 bg-gray-400 rotate-[30deg] origin-bottom shadow-sm hidden md:block">
-                                <div className="absolute -top-1 -left-1 w-3 h-3 rounded-full bg-gray-300" />
-                            </div>
-                        </div>
-                        <div className="mt-8 text-center font-serif text-2xl text-gold italic tracking-wide">
-                            Raja na Kunvar
-                        </div>
-                    </motion.a>
+                        </a>
+                    )}
 
                 </div>
 

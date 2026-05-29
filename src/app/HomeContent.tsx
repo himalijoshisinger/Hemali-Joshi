@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Music, Calendar, Image as ImageIcon } from "lucide-react";
 import dynamic from "next/dynamic";
@@ -23,6 +23,27 @@ export default function HomeContent() {
         setShowSplash(false);
         splashHasShown = true;
     };
+
+    useEffect(() => {
+        // Check flag on mount
+        if (typeof window !== "undefined" && (window as any).__showSplashOnHome) {
+            (window as any).__showSplashOnHome = false;
+            setShowSplash(true);
+        }
+
+        // Listen for the trigger-splash event
+        const handleTriggerSplash = () => {
+            if (typeof window !== "undefined") {
+                (window as any).__showSplashOnHome = false;
+            }
+            setShowSplash(true);
+        };
+
+        window.addEventListener("trigger-splash", handleTriggerSplash);
+        return () => {
+            window.removeEventListener("trigger-splash", handleTriggerSplash);
+        };
+    }, []);
 
     return (
         <main className="relative min-h-screen bg-transparent text-white selection:bg-gold selection:text-black">

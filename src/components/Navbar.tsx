@@ -46,7 +46,16 @@ export default function Navbar() {
         >
             <div className="w-full px-4 md:px-8 flex items-center justify-between">
                 {/* Logo - Matches Splash Screen Style */}
-                <Link href="/" className="relative z-50 flex items-center gap-3 flex-shrink-0 group mr-auto pr-8">
+                <Link
+                    href="/"
+                    onClick={() => {
+                        if (typeof window !== "undefined") {
+                            (window as any).__showSplashOnHome = true;
+                            window.dispatchEvent(new Event("trigger-splash"));
+                        }
+                    }}
+                    className="relative z-50 flex items-center gap-3 flex-shrink-0 group mr-auto pr-8"
+                >
                     <motion.div
                         whileHover={{
                             rotateX: 10,

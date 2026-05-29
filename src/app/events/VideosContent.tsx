@@ -17,13 +17,13 @@ export default function VideosContent() {
         { id: 3, src: "/assets/vichu.mp4", poster: "/assets/vi.jpeg", title: "Album Launch", desc: "Behind the scenes access to the artist's life.", objectFit: "contain" as const, category: "performance" },
         { id: 4, src: "/assets/Gal/videos/WEDDING REEL (19-12-2024)-1.MP4", poster: "/assets/wedding_vibes.jpg", title: "Wedding Vibes", desc: "Magical musical moments from recent weddings.", objectFit: "contain" as const, category: "performance" },
         { id: 7, src: "/assets/Gal/videos/DRFT 4 .MP4", poster: "/assets/Poster11.png", title: "Musical Journey", desc: "Our mission is simple: to transform every event into a unique musical journey that leaves lasting impressions and cherished memories.", category: "performance" },
-        { id: 15, src: "/assets/hitu.mp4", poster: "/assets/hituu.jpeg", title: "Hitu Kanodia", desc: "Appreciation and blessings from the famous superstar actor.", category: "celebrity" },
-        { id: 13, src: "/assets/kanodia.mp4", poster: "/assets/mona.jpeg", title: "Mona Thiba Kanodia", desc: "A beautiful review and appreciation from the renowned actress.", objectFit: "contain" as const, category: "celebrity" },
+        { id: 15, src: "/assets/hitu.mp4", poster: "/assets/hituu.jpeg", title: "Hitu Kanodia (Gujarati Actor)", desc: "Appreciation and blessings from the famous superstar actor.", category: "celebrity" },
+        { id: 13, src: "/assets/kanodia.mp4", poster: "/assets/mona.jpeg", title: "Mona Thiba Kanodia (Gujarati Actress)", desc: "A beautiful review and appreciation from the renowned actress.", objectFit: "contain" as const, category: "celebrity" },
         { id: 14, src: "/assets/News.mp4", poster: "/assets/media_uk.jpg", title: "Media spot in UK", desc: "Featured in news media for her unique garba releases and musical achievements.", objectFit: "contain" as const, category: "celebrity" },
         { id: 17, src: "/assets/au.mp4", poster: "/assets/cc.jpeg", title: "Audience Love", desc: "Unconditional love and support from our beautiful audience.", objectFit: "cover" as const, objectPosition: "object-center", category: "audience" },
-        { id: 16, src: "/assets/cli.mp4", poster: "/assets/Client.png", title: "Audience Energy", desc: "Amazing energy and love from our wonderful audience.", category: "audience" },
-        { id: 11, src: "/assets/Audience.mp4", poster: "/assets/Client1.png", title: "Fan Moments", desc: "A glimpse of the love and support from amazing fans.", category: "audience" },
-        { id: 12, src: "/assets/vid2.mp4", poster: "/assets/ccl.png", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show.", category: "audience" },
+        { id: 16, src: "/assets/cli.mp4", poster: "/assets/Client.png", title: "Client Review", desc: "Amazing energy and love from our wonderful audience.", category: "audience" },
+        { id: 11, src: "/assets/Audience.mp4", poster: "/assets/Client1.png", title: "Client Review", desc: "A glimpse of the love and support from amazing fans.", category: "audience" },
+        { id: 12, src: "/assets/vid2.mp4", poster: "/assets/ccl.png", title: "Client Review", desc: "Pure joy and unmatched support from our lovely audience during the live show.", category: "audience" },
     ];
 
     // Featured video logic

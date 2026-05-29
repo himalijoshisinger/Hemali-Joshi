@@ -196,7 +196,7 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
 
                                     {/* Platform Info */}
                                     <div className="text-center relative z-40">
-                                        <h3 className="text-xl font-bold text-white mb-1 tracking-tight truncate px-2">
+                                        <h3 className="text-xl font-bold text-white mb-1 tracking-tight line-clamp-2 leading-snug px-2">
                                             {portal.title}
                                         </h3>
                                         <p className="text-[11px] font-bold tracking-[0.2em] text-gold mb-2 uppercase opacity-90">

@@ -39,12 +39,12 @@ function HubPanel({ section, index, onClick }: { section: any, index: number, on
             />
 
             {/* Glassmorphism Overlay */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/30 to-transparent transition-all duration-700" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/50 to-black/20 transition-all duration-700" />
 
             {/* Content: Vertical Text & Gold Line */}
             <div className="relative z-30 flex flex-col items-center justify-center h-full w-full pointer-events-none">
                 <div className="md:transform md:-rotate-90 md:origin-center whitespace-nowrap overflow-visible">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.4em] font-sans font-black text-white/90 group-hover:text-gold group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] transition-all duration-700 uppercase">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.4em] font-sans font-black text-white group-hover:text-gold group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] transition-all duration-700 uppercase">
                         {section.title}
                     </h2>
                 </div>

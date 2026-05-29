@@ -33,7 +33,8 @@ const binniImages = [
     "/assets/Bansi/binni1.jpeg",
     "/assets/Bansi/binni2.jpeg",
     "/assets/Bansi/binni3.jpeg",
-    "/assets/Bansi/binni4.jpeg"
+    "/assets/Bansi/binni4.jpeg",
+    "/Brand Collabration/BN.jpeg"
 ];
 
 

@@ -13,7 +13,7 @@ export default function VideosContent() {
     const videos = [
         { id: 1, src: "/assets/Gal/videos/319267f0-a223-4356-b981-c6d6cd42cedf.MP4", poster: "/assets/concert.jpg", title: "Live Concert in UK", desc: "Experience the energy of the live stage performance.", category: "performance" },
         { id: 2, src: "/assets/boly.mp4", title: "Bollywood Night", desc: "A raw, acoustic rendition of classic hits.", category: "performance" },
-        { id: 3, src: "/assets/vichu.mp4", poster: "/assets/Poster10.png", title: "Album Launch", desc: "Behind the scenes access to the artist's life.", category: "performance" },
+        { id: 3, src: "/assets/vichu.mp4", poster: "/assets/vi.jpeg", title: "Album Launch", desc: "Behind the scenes access to the artist's life.", category: "performance" },
         { id: 4, src: "/assets/Gal/videos/WEDDING REEL (19-12-2024)-1.MP4", poster: "/assets/wedding_vibes.jpg", title: "Wedding Vibes", desc: "Magical musical moments from recent weddings.", objectFit: "contain" as const, category: "performance" },
         { id: 7, src: "/assets/Gal/videos/DRFT 4 .MP4", poster: "/assets/Poster11.png", title: "Musical Journey", desc: "Our mission is simple: to transform every event into a unique musical journey that leaves lasting impressions and cherished memories.", category: "performance" },
         { id: 15, src: "/assets/hitu.mp4", poster: "/assets/hituu.jpeg", title: "Hitu Kanodia", desc: "Appreciation and blessings from the famous superstar actor.", category: "celebrity" },

@@ -131,14 +131,6 @@ export default function ArtisticVideoCard({ src, title, description, onClick, ye
                     <span className="text-[10px] uppercase tracking-widest text-white/40">{year}</span>
                 </div>
 
-                <div className="flex items-center gap-3">
-                    <span className="text-xs font-medium tracking-wider text-gold/80">{tag}</span>
-                    {description && (
-                        <p className="line-clamp-1 text-xs text-gray-400 font-light max-w-[80%]">
-                            {description}
-                        </p>
-                    )}
-                </div>
             </div>
         </motion.div>
     );

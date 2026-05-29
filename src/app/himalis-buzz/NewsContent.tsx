@@ -7,8 +7,6 @@ import { ExternalLink, Calendar, Newspaper, Play, Star } from "lucide-react";
 
 const GENERAL_NEWS = [
     { id: 4, src: "/assets/News/article_interview.jpg", title: "Press Clipping", source: "Times Of India", date: "Interview", span: "md:col-span-2 md:row-span-2" },
-    { id: 8, src: "/assets/News/media_collage_2.jpg", title: "Press Highlights", source: "Media Highlights", date: "Feature", span: "col-span-1" },
-    { id: 9, src: "/assets/News/media_collage_1.jpg", title: "Media Coverage Compilation", source: "News Snippets", date: "Compilation", span: "col-span-1" },
     { id: 2, src: "/assets/News/Spark news .jpeg", title: "Media Spotlight", source: "Spark News", date: "Coverage", span: "col-span-1" },
     { id: 1, src: "/assets/News/sandesh.jpeg", title: "Cultural Achievements", source: "Sandesh News", date: "Feature", span: "col-span-1" },
     { id: 5, src: "/assets/patan.png", title: "Theatrical Performance", source: "Patan News", date: "Feature", span: "col-span-1" },
@@ -43,6 +41,50 @@ export default function NewsContent() {
                             </p>
                             <div className="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto opacity-50" />
                         </motion.div>
+                    </section>
+
+                    {/* NEW: Media Attention Section */}
+                    <section className="container mx-auto px-6 py-12 max-w-7xl border-b border-white/5 mb-12">
+                        <div className="flex flex-col lg:flex-row items-center gap-12">
+                            <div className="w-full lg:w-1/2">
+                                <motion.div
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="inline-block px-4 py-1 border border-gold/30 rounded-full text-[10px] uppercase tracking-widest text-gold mb-6 bg-gold/5">
+                                        Media Coverage
+                                    </div>
+                                    <h2 className="font-serif text-3xl md:text-5xl text-white mb-6 leading-tight">
+                                        Himali Joshi’s performances consistently attract <span className="text-gold italic">media attention,</span>
+                                    </h2>
+                                    <p className="text-gray-400 text-lg font-light italic leading-relaxed">
+                                        with her events regularly being featured and covered by leading media platforms.
+                                    </p>
+                                </motion.div>
+                            </div>
+                            <div className="w-full lg:w-1/2 flex justify-center gap-4 px-4 sm:px-12 md:px-20 lg:px-0">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="relative w-1/2 aspect-[3/4] rounded-2xl overflow-hidden border-[6px] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-[-6deg] hover:rotate-0 hover:scale-105 hover:z-10 hover:border-gold/50 transition-all duration-500 cursor-pointer"
+                                    onClick={() => setSelectedArticle({ id: 98, src: "/assets/News/media_collage_1.jpg", title: "Media Highlights", source: "Press", date: "Coverage" } as any)}
+                                >
+                                    <Image src="/assets/News/media_collage_1.jpg" alt="Media Collage 1" fill className="object-cover" />
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 }}
+                                    className="relative w-1/2 aspect-[3/4] rounded-2xl overflow-hidden border-[6px] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-[6deg] hover:rotate-0 hover:scale-105 hover:z-10 hover:border-gold/50 transition-all duration-500 mt-12 cursor-pointer"
+                                    onClick={() => setSelectedArticle({ id: 99, src: "/assets/News/media_collage_2.jpg", title: "Press Compilation", source: "Press", date: "Coverage" } as any)}
+                                >
+                                    <Image src="/assets/News/media_collage_2.jpg" alt="Media Collage 2" fill className="object-cover" />
+                                </motion.div>
+                            </div>
+                        </div>
                     </section>
 
                     {/* 1. NEWS SECTION (TOI & SANDESH) */}

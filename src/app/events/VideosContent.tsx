@@ -22,7 +22,7 @@ export default function VideosContent() {
         { id: 17, src: "/assets/au.mp4", poster: "/assets/cc.jpeg", title: "Audience Love", desc: "Unconditional love and support from our beautiful audience.", objectFit: "cover" as const, objectPosition: "object-center", category: "audience" },
         { id: 16, src: "/assets/cli.mp4", poster: "/assets/Client.png", title: "Audience Energy", desc: "Amazing energy and love from our wonderful audience.", category: "audience" },
         { id: 11, src: "/assets/Audience.mp4", poster: "/assets/Client1.png", title: "Fan Moments", desc: "A glimpse of the love and support from amazing fans.", category: "audience" },
-        { id: 12, src: "/assets/vid2.mp4", poster: "/assets/splash-full.jpg", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show.", category: "audience" },
+        { id: 12, src: "/assets/vid2.mp4", poster: "/assets/ccl.png", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show.", category: "audience" },
     ];
 
     // Featured video logic

@@ -13,9 +13,10 @@ interface ArtisticVideoCardProps {
     tag?: string;
     poster?: string;
     objectFit?: "cover" | "contain";
+    objectPosition?: string;
 }
 
-export default function ArtisticVideoCard({ src, title, description, onClick, year = "2024", tag = "Performance", poster, objectFit = "cover" }: ArtisticVideoCardProps) {
+export default function ArtisticVideoCard({ src, title, description, onClick, year = "2024", tag = "Performance", poster, objectFit = "cover", objectPosition = "object-center" }: ArtisticVideoCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isHovered, setIsHovered] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -100,12 +101,12 @@ export default function ArtisticVideoCard({ src, title, description, onClick, ye
                     <img 
                         src={poster}
                         alt={title}
-                        className={`h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : "object-cover"} transition-transform duration-700 group-hover:scale-105 ${isPlaying ? "opacity-0" : "opacity-100"}`}
+                        className={`h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : `object-cover ${objectPosition}`} transition-transform duration-700 group-hover:scale-105 ${isPlaying ? "opacity-0" : "opacity-100"}`}
                     />
                 ) : (
                     <video
                         src={`${actualSrc}#t=1.0`}
-                        className={`h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : "object-cover"} transition-transform duration-700 group-hover:scale-105 ${isPlaying ? "opacity-0" : "opacity-100"}`}
+                        className={`h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : `object-cover ${objectPosition}`} transition-transform duration-700 group-hover:scale-105 ${isPlaying ? "opacity-0" : "opacity-100"}`}
                         preload="metadata"
                     />
                 )}
@@ -114,7 +115,7 @@ export default function ArtisticVideoCard({ src, title, description, onClick, ye
                 <video
                     ref={videoRef}
                     src={actualSrc}
-                    className={`absolute inset-0 h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : "object-cover"} transition-opacity duration-500 ${isPlaying ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : `object-cover ${objectPosition}`} transition-opacity duration-500 ${isPlaying ? "opacity-100" : "opacity-0"}`}
                     muted={isMuted}
                     playsInline
                     loop

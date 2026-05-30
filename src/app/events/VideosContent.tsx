@@ -11,6 +11,17 @@ export default function VideosContent() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
     const [isMuted, setIsMuted] = useState(true);
 
+    // Close video on Escape key press
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape" && selectedVideo) {
+                setSelectedVideo(null);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [selectedVideo]);
+
     const videos = [
         { id: 1, src: "/assets/Gal/videos/319267f0-a223-4356-b981-c6d6cd42cedf.MP4", poster: "/assets/concert.jpg", title: "Live Concert in UK", desc: "Experience the energy of the live stage performance.", category: "performance" },
         { id: 2, src: "/assets/boly.mp4", title: "Bollywood Night", desc: "A raw, acoustic rendition of classic hits.", category: "performance" },

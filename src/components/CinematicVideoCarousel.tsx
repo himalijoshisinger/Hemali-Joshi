@@ -260,6 +260,17 @@ export default function CinematicVideoCarousel() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [selectedVideo, setSelectedVideo] = useState<{ url: string, title: string } | null>(null);
 
+    // Close video on Escape key press
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape" && selectedVideo) {
+                setSelectedVideo(null);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [selectedVideo]);
+
     const handleNext = () => {
         setActiveIndex((prev) => (prev + 1) % VIDEOS.length);
     };

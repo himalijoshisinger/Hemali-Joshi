@@ -343,13 +343,13 @@ export default function CinematicVideoCarousel() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl"
+                        className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black"
                         onClick={() => setSelectedVideo(null)}
                     >
                         {/* Close button */}
                         <button
                             onClick={() => setSelectedVideo(null)}
-                            className="absolute top-6 left-4 md:top-6 md:left-auto md:right-6 z-[9999] w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-gold hover:text-black border border-white/20 text-white flex items-center justify-center text-xl transition-all shadow-[0_0_20px_rgba(0,0,0,0.8)]"
+                            className="absolute top-[80px] right-4 md:top-6 md:right-6 z-[9999] w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-gold hover:text-black border border-white/20 text-white flex items-center justify-center text-xl transition-all shadow-[0_0_20px_rgba(0,0,0,0.8)]"
                         >
                             ✕
                         </button>

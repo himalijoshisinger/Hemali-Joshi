@@ -193,12 +193,12 @@ export default function VideosContent() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-0 backdrop-blur-md"
+                        className="fixed inset-0 z-[99999] bg-black flex items-center justify-center p-0"
                         onClick={() => setSelectedVideo(null)}
                     >
                         <button 
                             onClick={(e) => { e.stopPropagation(); setSelectedVideo(null); }}
-                            className="absolute top-6 left-4 md:top-6 md:left-auto md:right-6 text-white hover:text-red-500 transition-colors p-2 bg-black/80 rounded-full z-[9999] border border-white/30 shadow-2xl"
+                            className="absolute top-[80px] right-4 md:top-6 md:right-6 text-white hover:text-red-500 transition-colors p-2 bg-black/80 rounded-full z-[9999] border border-white/30 shadow-2xl"
                         >
                             <X size={32} className="md:w-10 md:h-10" />
                         </button>

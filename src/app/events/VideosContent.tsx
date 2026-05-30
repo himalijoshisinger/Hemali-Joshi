@@ -196,14 +196,17 @@ export default function VideosContent() {
                         className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-0 backdrop-blur-md"
                         onClick={() => setSelectedVideo(null)}
                     >
-                        <button className="absolute top-6 right-6 text-white hover:text-red-500 transition-colors p-2 bg-black/50 rounded-full z-[110]">
-                            <X size={40} />
+                        <button 
+                            onClick={(e) => { e.stopPropagation(); setSelectedVideo(null); }}
+                            className="absolute top-6 left-4 md:top-6 md:left-auto md:right-6 text-white hover:text-red-500 transition-colors p-2 bg-black/80 rounded-full z-[9999] border border-white/30 shadow-2xl"
+                        >
+                            <X size={32} className="md:w-10 md:h-10" />
                         </button>
                         <motion.div
                             initial={{ scale: 0.9 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 0.9 }}
-                            className="w-full h-full md:p-12 flex items-center justify-center"
+                            className="w-full h-full p-4 md:p-12 flex items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <video
@@ -211,6 +214,7 @@ export default function VideosContent() {
                                 className="max-w-full max-h-[85vh] shadow-2xl bg-black rounded-lg"
                                 controls
                                 autoPlay
+                                playsInline
                             />
                         </motion.div>
                     </motion.div>

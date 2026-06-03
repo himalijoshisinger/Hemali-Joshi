@@ -94,18 +94,18 @@ interface MusicPortalsProps {
 export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) {
     const [playingId, setPlayingId] = useState<string | null>(null);
     const [progress, setProgress] = useState<{ [key: string]: number }>({});
+    const [currentTimes, setCurrentTimes] = useState<{ [key: string]: number }>({});
     const audioRefs = useRef<{ [key: string]: HTMLAudioElement }>({});
+    // Track whether we have already snapped currentTime=0 for each track
+    const didSeekRef = useRef<{ [key: string]: boolean }>({});
 
     useEffect(() => {
-        // Cleanup on unmount
         return () => {
             Object.values(audioRefs.current).forEach(audio => {
-                if (audio) {
-                    audio.pause();
-                    audio.src = "";
-                }
+                if (audio) { audio.pause(); audio.src = ""; }
             });
             audioRefs.current = {};
+            didSeekRef.current = {};
         };
     }, []);
 
@@ -119,49 +119,54 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                 audioRefs.current[playingId]?.pause();
             }
 
-            // Create or play audio
+            // Create audio element if this is the first play
             if (!audioRefs.current[id]) {
-                const audio = new Audio(encodeURI(audioPath));
-                
-                audio.addEventListener('loadeddata', () => {
-                    if ((audio as any).baseStartTime === undefined) {
-                        (audio as any).baseStartTime = audio.currentTime;
+                const audio = new Audio();
+                didSeekRef.current[id] = false;
+
+                // PRIMARY FIX: m4a files recorded on phones contain an elst (Edit List)
+                // metadata box that tells browsers to start playback at a 13-20s offset,
+                // causing silent pre-roll. We intercept loadedmetadata and canplay to
+                // immediately snap currentTime back to 0 before audio actually plays.
+                const snapToStart = () => {
+                    if (!didSeekRef.current[id]) {
+                        audio.currentTime = 0;
+                        didSeekRef.current[id] = true;
                     }
-                });
+                };
+                audio.addEventListener('loadedmetadata', snapToStart);
+                audio.addEventListener('canplay', snapToStart);
 
                 audio.addEventListener('timeupdate', () => {
-                    if ((audio as any).baseStartTime === undefined && audio.currentTime > 0) {
-                        (audio as any).baseStartTime = audio.currentTime;
-                    }
-                    const baseStart = (audio as any).baseStartTime || 0;
-                    if (!isNaN(audio.duration)) {
-                        const relativeCurrent = Math.max(0, audio.currentTime - baseStart);
-                        const relativeDuration = Math.max(0.1, audio.duration - baseStart);
-                        setProgress(prev => ({
-                            ...prev,
-                            [id]: (relativeCurrent / relativeDuration) * 100
-                        }));
+                    if (!isNaN(audio.duration) && audio.duration > 0) {
+                        setProgress(prev => ({ ...prev, [id]: (audio.currentTime / audio.duration) * 100 }));
+                        setCurrentTimes(prev => ({ ...prev, [id]: audio.currentTime }));
                     }
                 });
                 audio.addEventListener('ended', () => {
                     setPlayingId(null);
                     setProgress(prev => ({ ...prev, [id]: 0 }));
+                    setCurrentTimes(prev => ({ ...prev, [id]: 0 }));
+                    didSeekRef.current[id] = false;
                 });
                 audio.addEventListener('error', (e) => {
                     const target = e.target as HTMLAudioElement;
-                    console.error("Audio playback error:", target.error?.message || "Unknown error", "Path:", audioPath);
+                    console.error("Audio error:", target.error?.message, "Path:", audioPath);
                     setPlayingId(null);
                 });
+
+                // Set src AFTER attaching listeners so loadedmetadata fires correctly
+                audio.src = encodeURI(audioPath);
                 audioRefs.current[id] = audio;
             }
 
             const audio = audioRefs.current[id];
-            if (audio.readyState >= 1) {
-                audio.currentTime = (audio as any).baseStartTime || 0;
-            }
+            // Always start from the beginning when user presses play
+            audio.currentTime = 0;
+            didSeekRef.current[id] = true;
 
             audio.play().catch(error => {
-                console.error("Playback failed (User interaction might be required or path is invalid):", error.message);
+                console.error("Playback failed:", error.message);
                 setPlayingId(null);
             });
             setPlayingId(id);
@@ -225,7 +230,7 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                                         <div className="mt-6 flex flex-col gap-5 p-4 rounded-xl bg-black/40 border border-white/5">
                                             <div className="flex items-center gap-3">
                                                 <span className="text-[10px] text-gray-300 tabular-nums w-[28px] text-left">
-                                                    {formatTime(audio ? Math.max(0, audio.currentTime - ((audio as any).baseStartTime || 0)) : 0)}
+                                                    {formatTime(currentTimes[portal.id] || 0)}
                                                 </span>
                                                 <div className="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
                                                     <motion.div

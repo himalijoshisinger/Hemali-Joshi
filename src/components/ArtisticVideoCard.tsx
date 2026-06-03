@@ -109,7 +109,7 @@ export default function ArtisticVideoCard({ src, title, description, onClick, ye
                     <video
                         src={`${actualSrc}#t=1.0`}
                         className={`h-full w-full ${objectFit === "contain" ? "object-contain bg-black" : `object-cover ${objectPosition}`} transition-transform duration-700 group-hover:scale-105 ${isPlaying ? "opacity-0" : "opacity-100"}`}
-                        preload="metadata"
+                        preload="none"
                     />
                 )}
 

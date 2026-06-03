@@ -14,6 +14,7 @@ export interface PortalData {
     color: string;
     link: string;
     icon: React.ReactNode;
+    startOffset?: number;
 }
 
 export const PORTAL_DATA: PortalData[] = [
@@ -96,8 +97,6 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
     const [progress, setProgress] = useState<{ [key: string]: number }>({});
     const [currentTimes, setCurrentTimes] = useState<{ [key: string]: number }>({});
     const audioRefs = useRef<{ [key: string]: HTMLAudioElement }>({});
-    // Track whether we have already snapped currentTime=0 for each track
-    const didSeekRef = useRef<{ [key: string]: boolean }>({});
 
     useEffect(() => {
         return () => {
@@ -105,11 +104,10 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                 if (audio) { audio.pause(); audio.src = ""; }
             });
             audioRefs.current = {};
-            didSeekRef.current = {};
         };
     }, []);
 
-    const togglePlay = (id: string, audioPath: string) => {
+    const togglePlay = (id: string, audioPath: string, startOffset?: number) => {
         if (playingId === id) {
             audioRefs.current[id]?.pause();
             setPlayingId(null);
@@ -122,32 +120,25 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
             // Create audio element if this is the first play
             if (!audioRefs.current[id]) {
                 const audio = new Audio();
-                didSeekRef.current[id] = false;
-
-                // PRIMARY FIX: m4a files recorded on phones contain an elst (Edit List)
-                // metadata box that tells browsers to start playback at a 13-20s offset,
-                // causing silent pre-roll. We intercept loadedmetadata and canplay to
-                // immediately snap currentTime back to 0 before audio actually plays.
-                const snapToStart = () => {
-                    if (!didSeekRef.current[id]) {
-                        audio.currentTime = 0;
-                        didSeekRef.current[id] = true;
-                    }
-                };
-                audio.addEventListener('loadedmetadata', snapToStart);
-                audio.addEventListener('canplay', snapToStart);
-
+                
                 audio.addEventListener('timeupdate', () => {
                     if (!isNaN(audio.duration) && audio.duration > 0) {
-                        setProgress(prev => ({ ...prev, [id]: (audio.currentTime / audio.duration) * 100 }));
-                        setCurrentTimes(prev => ({ ...prev, [id]: audio.currentTime }));
+                        const offset = startOffset || 0;
+                        // Seek to offset if the browser failed to honor the elst metadata (mostly mobile Safari/Chrome)
+                        if (offset > 0 && audio.currentTime < offset - 0.5) {
+                            audio.currentTime = offset;
+                        }
+                        
+                        const relativeCurrent = Math.max(0, audio.currentTime - offset);
+                        const relativeDuration = Math.max(0.1, audio.duration - offset);
+                        setProgress(prev => ({ ...prev, [id]: (relativeCurrent / relativeDuration) * 100 }));
+                        setCurrentTimes(prev => ({ ...prev, [id]: relativeCurrent }));
                     }
                 });
                 audio.addEventListener('ended', () => {
                     setPlayingId(null);
                     setProgress(prev => ({ ...prev, [id]: 0 }));
                     setCurrentTimes(prev => ({ ...prev, [id]: 0 }));
-                    didSeekRef.current[id] = false;
                 });
                 audio.addEventListener('error', (e) => {
                     const target = e.target as HTMLAudioElement;
@@ -155,15 +146,22 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                     setPlayingId(null);
                 });
 
-                // Set src AFTER attaching listeners so loadedmetadata fires correctly
                 audio.src = encodeURI(audioPath);
                 audioRefs.current[id] = audio;
             }
 
             const audio = audioRefs.current[id];
-            // Always start from the beginning when user presses play
-            audio.currentTime = 0;
-            didSeekRef.current[id] = true;
+            
+            // If starting fresh or song ended, try to seek to offset immediately if browser readyState allows
+            if (audio.currentTime === 0 || audio.ended) {
+                const offset = startOffset || 0;
+                try {
+                    audio.currentTime = offset;
+                } catch (e) {
+                    // Mobile Safari throws an index-size error or invalid state if readyState < HAVE_METADATA.
+                    // This is expected. The timeupdate listener will catch it as soon as the first frame loads.
+                }
+            }
 
             audio.play().catch(error => {
                 console.error("Playback failed:", error.message);
@@ -252,7 +250,7 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
 
                                             <div className="flex justify-center">
                                                 <button
-                                                    onClick={() => togglePlay(portal.id, portal.audio)}
+                                                    onClick={() => togglePlay(portal.id, portal.audio, portal.startOffset)}
                                                     className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 text-white shadow-lg"
                                                     style={{
                                                         backgroundColor: portal.color,

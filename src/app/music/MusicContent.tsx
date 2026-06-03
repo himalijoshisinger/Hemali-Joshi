@@ -55,7 +55,8 @@ export default function MusicContent() {
                 ...item,
                 audio: "/assets/audio/ujjala.m4a",
                 title: "Ujjala",
-                cover: "/assets/ujjala.png"
+                cover: "/assets/ujjala.png",
+                startOffset: 13.63
             };
         }
         if (index === 1) {
@@ -63,7 +64,8 @@ export default function MusicContent() {
                 ...item,
                 audio: "/assets/audio/rang_lagyo.m4a",
                 title: "Rang Lagyo",
-                cover: "/assets/rang_lagyo_new.jpg"
+                cover: "/assets/rang_lagyo_new.jpg",
+                startOffset: 23.32
             };
         }
         if (index === 2) {
@@ -71,7 +73,8 @@ export default function MusicContent() {
                 ...item,
                 audio: "/assets/audio/pehla_nasha.m4a",
                 title: "Pehla Nasha",
-                cover: "/assets/pehla_nasha_new.jpg"
+                cover: "/assets/pehla_nasha_new.jpg",
+                startOffset: 15.12
             };
         }
         if (index === 3) {
@@ -79,7 +82,8 @@ export default function MusicContent() {
                 ...item,
                 audio: "/assets/audio/mein_teri_behna_hoon.m4a",
                 title: "Mein Teri Behna Hoon",
-                cover: "/assets/behna.png"
+                cover: "/assets/behna.png",
+                startOffset: 17.20
             };
         }
         return item;

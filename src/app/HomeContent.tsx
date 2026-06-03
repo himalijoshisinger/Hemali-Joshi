@@ -53,11 +53,6 @@ export default function HomeContent() {
             {/* Main Website Content */}
             <div className="min-h-screen">
                 <Hero />
-                <YoutubeCinematicGallery />
-                <CinematicVideoCarousel />
-                <SponsorsSection />
-                <MusicPlatforms />
-                <ConcertMap />
 
                 {/* Intro / About Teaser */}
                 <section className="py-12 md:py-24 px-4 md:px-6 container mx-auto text-center">
@@ -71,6 +66,12 @@ export default function HomeContent() {
                         Read Full Biography <ArrowRight size={16} />
                     </Link>
                 </section>
+
+                <YoutubeCinematicGallery />
+                <CinematicVideoCarousel />
+                <SponsorsSection />
+                <MusicPlatforms />
+                <ConcertMap />
 
                 {/* Feature Grid */}
                 <section className="grid grid-cols-1 md:grid-cols-3 min-h-[250px] md:min-h-[500px]">

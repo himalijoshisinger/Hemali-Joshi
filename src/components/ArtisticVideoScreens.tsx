@@ -173,7 +173,7 @@ export default function ArtisticVideoScreens() {
 
                     {/* 2. Smart TV (Center - Dominant) */}
                     <motion.a
-                        href={CHANNEL_SUBSCRIBE_LINK}
+                        href="https://youtu.be/KVtG3h480ZU?si=zfH3l-smdIobPO1L"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={mounted && !isMobile ? { scale: 1.05 } : {}}
@@ -378,6 +378,33 @@ export default function ArtisticVideoScreens() {
                     )}
 
                 </div>
+
+                {/* YouTube Channel CTA */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mt-16 md:mt-24 text-center"
+                >
+                    <a 
+                        href="https://www.youtube.com/channel/UCvyI4RHfXex8nchIYopXLOQ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600/10 via-red-600/20 to-red-600/10 hover:from-red-600/20 hover:via-red-600/30 hover:to-red-600/20 border border-red-500/30 hover:border-red-500/50 rounded-full transition-all duration-300 group shadow-[0_0_30px_rgba(239,68,68,0.08)] hover:shadow-[0_0_40px_rgba(239,68,68,0.18)]"
+                    >
+                        <svg 
+                            className="w-6 h-6 text-red-500 group-hover:scale-110 transition-transform duration-300" 
+                            viewBox="0 0 24 24" 
+                            fill="currentColor"
+                        >
+                            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        <span className="text-gray-300 group-hover:text-white font-medium text-sm md:text-base tracking-wide transition-colors">
+                            For more videos, check out my <span className="text-red-500 font-bold group-hover:text-red-400">YouTube Channel</span>
+                        </span>
+                    </a>
+                </motion.div>
 
             </div>
         </section>

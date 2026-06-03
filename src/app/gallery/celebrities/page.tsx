@@ -14,7 +14,9 @@ const celebrityImages = [
     "/Celebrites/cel 5.jpeg",
     "/Celebrites/cel 4.jpeg",
     "/Celebrites/cel 3.jpeg",
-    "/assets/komal.png"
+    "/assets/komal.png",
+    "/Judge/jud 1.jpeg",
+    "/Judge/jud 2.jpeg"
 ];
 
 export default function CelebritiesGalleryPage() {
@@ -35,11 +37,11 @@ export default function CelebritiesGalleryPage() {
                 </div>
                 
                 {/* Pure CSS Masonry Grid */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8 mb-32">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 mb-32">
                     {celebrityImages.map((src, index) => (
                         <div 
                             key={index} 
-                            className="break-inside-avoid relative group rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl transition-all duration-500 hover:border-gold/30 hover:shadow-gold/10"
+                            className="inline-block w-full break-inside-avoid relative group rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl transition-all duration-500 hover:border-gold/30 hover:shadow-gold/10 mb-8"
                         >
                             <Image
                                 src={encodeURI(src)}

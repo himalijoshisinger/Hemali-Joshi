@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 
 const weddingImages = [
     "/Wedding/Wed 1.jpeg",
+    "/Wedding/wed 2.jpeg",
     "/Wedding/wed 3.jpeg",
+    "/Wedding/wed 4.jpeg",
     "/assets/wedding1.png",
     "/assets/wedding2.png",
     "/assets/wedding3.png",
@@ -36,9 +38,9 @@ export default function WeddingGalleryPage() {
                 </div>
 
                 {/* Pure CSS Masonry Grid */}
-                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6 mb-32">
+                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 mb-32">
                     {weddingImages.map((src, index) => (
-                        <div key={index} className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer">
+                        <div key={index} className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer mb-6">
                             <Image
                                 src={src}
                                 alt={`Wedding performance by Himali Joshi - ${index + 1}`}

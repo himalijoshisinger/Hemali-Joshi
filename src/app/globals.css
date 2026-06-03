@@ -66,7 +66,7 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background-color: var(--color-black);
   /* Dynamic Noise Background */
   background-image:
     radial-gradient(circle at 50% 0%, #4a0404 0%, transparent 40%),
@@ -89,9 +89,11 @@ body {
   /* Smooth momentum scroll on iOS */
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: none;
-  /* Custom Mic cursor - Only hide default on desktop with mouse */
-  @media (min-width: 768px) and (pointer: fine) {
-    cursor: none;
+  /* Custom Mic cursor - Only hide default when active */
+  &.has-custom-cursor {
+    &, *, *::before, *::after {
+      cursor: none !important;
+    }
   }
 
   /* Security: Disable Selection & Callouts */

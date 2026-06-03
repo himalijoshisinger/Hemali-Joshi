@@ -27,8 +27,8 @@ export const PORTAL_DATA: PortalData[] = [
         color: "#1DB954",
         link: "https://open.spotify.com/artist/76Ne4HMMruHNaglAhCp8dT",
         icon: (
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 14.34 1.14.539.3.66 1.02.359 1.56-.24.36-.899.54-1.259.24z" />
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white">
+                <path d="M16.586 16.424c-.18.295-.563.387-.857.207-2.35-1.434-5.305-1.76-8.786-.963-.335.076-.668-.135-.744-.47-.077-.336.135-.668.47-.745 3.807-.87 7.076-.496 9.71 1.112.294.18.386.563.207.857zm1.163-2.705c-.226.367-.707.487-1.074.26-2.69-1.654-6.79-2.134-9.97-1.17-.413.125-.845-.108-.97-.522-.125-.413.108-.844.522-.97 3.64-1.105 8.16-.575 11.23 1.307.366.227.486.707.26 1.074zm.1-2.82c-3.224-1.917-8.547-2.093-11.644-1.152-.497.15-1.022-.13-1.173-.627-.15-.497.13-1.022.626-1.172 3.585-1.09 9.467-.887 13.18 1.316.446.265.592.836.327 1.282-.265.446-.83.593-1.28.328z" />
             </svg>
         )
     },
@@ -42,7 +42,7 @@ export const PORTAL_DATA: PortalData[] = [
         color: "#FA243C",
         link: "https://music.apple.com/in/artist/himali-joshi/1544328313",
         icon: (
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white">
                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.56-.84 1.5.09 2.63.63 3.31 1.62-3.15 1.87-2.66 6.01.27 7.23-.61 1.5-1.4 3.01-2.27 4.16zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
             </svg>
         )
@@ -57,7 +57,7 @@ export const PORTAL_DATA: PortalData[] = [
         color: "#00A8E1",
         link: "https://music.amazon.in/artists/B08T8Q24SV/himali-joshi?referrer=https%3A%2F%2Fmusic.amazon.in%2F",
         icon: (
-            <svg viewBox="0 0 89 52" fill="currentColor" className="h-[18px] w-auto">
+            <svg viewBox="0 0 89 52" fill="currentColor" className="h-[12px] w-auto text-white">
                 <path d="M59.7,40.5c-0.6,0.4-1.5,0.7-2.6,0.7-1.7,0-3.3-0.2-4.9-0.7c-0.4-0.1-0.7-0.2-0.9-0.2c-0.3,0-0.4,0.2-0.4,0.6v1 c0,0.3,0.1,0.5,0.2,0.7s0.3,0.3,0.6,0.4c1.6,0.7,3.4,1,5.4,1c2.1,0,3.7-0.5,5-1.5s1.9-2.3,1.9-4c0-1.2-0.3-2.1-0.9-2.9 s-1.6-1.4-3-1.9l-2.8-1.1c-1.1-0.4-1.9-0.8-2.2-1.2s-0.6-0.8-0.6-1.5c0-1.5,1.1-2.3,3.4-2.3c1.3,0,2.6,0.2,3.8,0.6 c0.4,0.1,0.7,0.2,0.8,0.2s0.5-0.2,0.5-0.6v-1c0-0.3-0.1-0.5-0.2-0.7s-0.3-0.3-0.6-0.4c-1.5-0.5-3-0.8-4.5-0.8c-1.9,0-3.5,0.5-4.7,1.4 s-1.8,2.2-1.8,3.7c0,2.3,1.3,4,3.9,5l3,1.1c1,0.4,1.6,0.7,2,1.1s0.5,0.8,0.5,1.4c0,0.8-0.3,1.5-0.9,1.9z" />
                 <path d="M44,26.1v13.3c-1.7,1.1-3.4,1.7-5.1,1.7c-1.1,0-1.9-0.3-2.4-0.9s-0.2-0.9-0.2-2.2V26.1c0-0.5-0.2-0.7-0.7-0.7H33 c-0.5,0-0.7,0.2-0.7,0.7v12.4c0,1.7,0.4,3.1,1.3,4c0.9,0.9,2.2,1.4,3.9,1.4c2.3,0,4.6-0.8,6.8-2.4l0.2,1.2c0,0.3,0.1,0.4,0.3,0.5 s0.3,0.1,0.6,0.1h1.5c0.5,0,0.7-0.2,0.7-0.7V26.1c0-0.5-0.2-0.7-0.7-0.7h-2.1c-0.6,0-0.8,0.3-0.8,0.7z" />
                 <path d="M25,43.4h2.1c0.5,0,0.7-0.2,0.7-0.7V30.2c0-1.7-0.4-3-1.3-3.9s-2.1-1.4-3.8-1.4c-2.3,0-4.7,0.8-7,2.5 c-0.8-1.7-2.3-2.5-4.5-2.5s-4.4,0.8-6.6,2.3L4.4,26.1c0-0.3-0.1-0.4-0.3-0.5S3.8,25.5,3.6,25.5H2c-0.5,0-0.7,0.2-0.7,0.7v16.6 c0,0.5,0.2,0.7,0.7,0.7h2.1c0.5,0,0.7-0.2,0.7-0.7V29.3c1.7-1,3.4-1.6,5.2-1.6c1,0,1.7,0.3,2.1,0.9s0.7,1.4,0.7,2.6v11.5 c0,0.5,0.2,0.7,0.7,0.7h2.1c0.5,0,0.7-0.2,0.7-0.7V30.4v-0.6c0-0.2,0-0.4,0-0.5c1.8-1.1,3.5-1.6,5.2-1.6c1,0,1.7,0.3,2.1,0.9 s0.7,1.4,0.7,2.6v11.5c0,0.5,0.2,0.7,0.7,0.7z" />
@@ -78,11 +78,10 @@ export const PORTAL_DATA: PortalData[] = [
         color: "#1ECCB0",
         link: "https://www.jiosaavn.com/artist/himali-joshi-songs/NeYXW5LVM6g_",
         icon: (
-            <svg viewBox="0 0 32 32" fill="currentColor" className="w-6 h-6">
-                <path d="M0,16c0,8.8,7.2,16,16,16c8.8,0,16-7.2,16-16c0-8.8-7.2-16-16-16C7.2,0,0,7.2,0,16z" fill="#1ECCB0" />
-                <path d="M13.8,25.1c-0.6-1-1.4-1.9-2.4-2.5s-2-1.1-3.2-1.4H8.2c-0.1,0-0.2,0-0.3,0.1c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.2c1.3,1.9,3.3,3.3,5.5,3.9h0.1c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.1-0.1c0,0,0.1-0.1,0.1-0.1c0,0,0-0.1,0-0.2C13.9,25.2,13.9,25.1,13.8,25.1L13.8,25.1z" fill="white" />
-                <path d="M25.6,13.3c0,0,0-0.1,0-0.1c-0.5-1.8-1.5-3.4-2.9-4.6c-1.4-1.2-3-2.1-4.8-2.4h-0.1c-0.1,0-0.2,0-0.3,0.1c-0.1,0.1-0.1,0.2-0.1,0.3v0.1c0.9,5.5,0.3,11.1-1.7,16.3c0,0.1-0.1,0.1-0.1,0.2s-0.1,0.1-0.2,0.1c-0.1,0-0.1,0-0.2,0c0,0-0.1,0-0.1-0.1c0,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.2c0,0-0.1-0.7-0.1-1c-0.6-4.8-2-9.4-4.3-13.7c0-0.1-0.1-0.1-0.1-0.1c0,0-0.1-0.1-0.1-0.1s-0.1,0-0.2,0C10.1,8,10.1,8,10,8l0,0c-1.4,1.1-2.5,2.5-3.2,4.2c0,0.1,0,0.2,0,0.3c0,0.1,0.1,0.2,0.2,0.2c2.2,1.4,4,3.2,5.3,5.5c1.3,2.2,2,4.8,2.1,7.3c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.1,0.2,0.1c0.2,0,0.5,0.1,0.7,0.1c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.1,0.1-0.2c0.5-2.6,1.6-5.1,3.3-7.2c1.7-2.1,3.8-3.7,6.3-4.8c0.1,0,0.1-0.1,0.2-0.1C25.6,13.4,25.6,13.4,25.6,13.3z" fill="white" />
-                <path d="M24.7,20.9c0-0.1,0-0.2-0.1-0.3c-0.1-0.1-0.2-0.1-0.3-0.1h-0.1c-3.1,0.7-5.9,2.4-7.9,4.8c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.1,0.3,0.1l0,0c1.6-0.1,3.2-0.6,4.6-1.4s2.6-2,3.4-3.4C24.7,21.1,24.7,21,24.7,20.9L24.7,20.9z" fill="white" />
+            <svg viewBox="0 0 32 32" fill="currentColor" className="w-5 h-5 text-white">
+                <path d="M13.8,25.1c-0.6-1-1.4-1.9-2.4-2.5s-2-1.1-3.2-1.4H8.2c-0.1,0-0.2,0-0.3,0.1c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.2c1.3,1.9,3.3,3.3,5.5,3.9h0.1c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.1-0.1c0,0,0.1-0.1,0.1-0.1c0,0,0-0.1,0-0.2C13.9,25.2,13.9,25.1,13.8,25.1L13.8,25.1z" />
+                <path d="M25.6,13.3c0,0,0-0.1,0-0.1c-0.5-1.8-1.5-3.4-2.9-4.6c-1.4-1.2-3-2.1-4.8-2.4h-0.1c-0.1,0-0.2,0-0.3,0.1c-0.1,0.1-0.1,0.2-0.1,0.3v0.1c0.9,5.5,0.3,11.1-1.7,16.3c0,0.1-0.1,0.1-0.1,0.2s-0.1,0.1-0.2,0.1c-0.1,0-0.1,0-0.2,0c0,0-0.1,0-0.1-0.1c0,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.2c0,0-0.1-0.7-0.1-1c-0.6-4.8-2-9.4-4.3-13.7c0-0.1-0.1-0.1-0.1-0.1c0,0-0.1-0.1-0.1-0.1s-0.1,0-0.2,0C10.1,8,10.1,8,10,8l0,0c-1.4,1.1-2.5,2.5-3.2,4.2c0,0.1,0,0.2,0,0.3c0,0.1,0.1,0.2,0.2,0.2c2.2,1.4,4,3.2,5.3,5.5c1.3,2.2,2,4.8,2.1,7.3c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.1,0.2,0.1c0.2,0,0.5,0.1,0.7,0.1c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.1,0.1-0.2c0.5-2.6,1.6-5.1,3.3-7.2c1.7-2.1,3.8-3.7,6.3-4.8c0.1,0,0.1-0.1,0.2-0.1C25.6,13.4,25.6,13.4,25.6,13.3z" />
+                <path d="M24.7,20.9c0-0.1,0-0.2-0.1-0.3c-0.1-0.1-0.2-0.1-0.3-0.1h-0.1c-3.1,0.7-5.9,2.4-7.9,4.8c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.1,0.3,0.1l0,0c1.6-0.1,3.2-0.6,4.6-1.4s2.6-2,3.4-3.4C24.7,21.1,24.7,21,24.7,20.9L24.7,20.9z" />
             </svg>
         )
     }
@@ -101,9 +100,12 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
         // Cleanup on unmount
         return () => {
             Object.values(audioRefs.current).forEach(audio => {
-                audio.pause();
-                audio.src = "";
+                if (audio) {
+                    audio.pause();
+                    audio.src = "";
+                }
             });
+            audioRefs.current = {};
         };
     }, []);
 
@@ -120,11 +122,24 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
             // Create or play audio
             if (!audioRefs.current[id]) {
                 const audio = new Audio(encodeURI(audioPath));
+                
+                audio.addEventListener('loadeddata', () => {
+                    if ((audio as any).baseStartTime === undefined) {
+                        (audio as any).baseStartTime = audio.currentTime;
+                    }
+                });
+
                 audio.addEventListener('timeupdate', () => {
+                    if ((audio as any).baseStartTime === undefined && audio.currentTime > 0) {
+                        (audio as any).baseStartTime = audio.currentTime;
+                    }
+                    const baseStart = (audio as any).baseStartTime || 0;
                     if (!isNaN(audio.duration)) {
+                        const relativeCurrent = Math.max(0, audio.currentTime - baseStart);
+                        const relativeDuration = Math.max(0.1, audio.duration - baseStart);
                         setProgress(prev => ({
                             ...prev,
-                            [id]: (audio.currentTime / audio.duration) * 100
+                            [id]: (relativeCurrent / relativeDuration) * 100
                         }));
                     }
                 });
@@ -140,7 +155,12 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                 audioRefs.current[id] = audio;
             }
 
-            audioRefs.current[id].play().catch(error => {
+            const audio = audioRefs.current[id];
+            if (audio.readyState >= 1) {
+                audio.currentTime = (audio as any).baseStartTime || 0;
+            }
+
+            audio.play().catch(error => {
                 console.error("Playback failed (User interaction might be required or path is invalid):", error.message);
                 setPlayingId(null);
             });
@@ -176,13 +196,11 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                                 >
 
                                     {/* Platform Icon - Top Right (Always visible) */}
-                                    <div className="absolute top-6 right-6 z-30 w-8 h-8 flex items-center justify-center">
-                                        <div 
-                                            style={{ color: portal.color }} 
-                                            className="w-full h-full flex items-center justify-center filter drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]"
-                                        >
-                                            {portal.icon}
-                                        </div>
+                                    <div 
+                                        style={{ backgroundColor: portal.color }}
+                                        className="absolute top-5 right-5 z-40 w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)] border border-white/20 transition-all duration-300 hover:scale-110"
+                                    >
+                                        {portal.icon}
                                     </div>
 
                                     {/* Vintage CD Player Centerpiece */}
@@ -207,7 +225,7 @@ export default function MusicPortals({ data = PORTAL_DATA }: MusicPortalsProps) 
                                         <div className="mt-6 flex flex-col gap-5 p-4 rounded-xl bg-black/40 border border-white/5">
                                             <div className="flex items-center gap-3">
                                                 <span className="text-[10px] text-gray-300 tabular-nums w-[28px] text-left">
-                                                    {formatTime(audio?.currentTime || 0)}
+                                                    {formatTime(audio ? Math.max(0, audio.currentTime - ((audio as any).baseStartTime || 0)) : 0)}
                                                 </span>
                                                 <div className="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
                                                     <motion.div

@@ -40,4 +40,16 @@ export const galleryImages = [
     { id: 44, src: "/Celebrites/cel 3.jpeg", category: "celebrities" },
     { id: 45, src: "/Celebrites/cel 4.jpeg", category: "celebrities" },
     { id: 46, src: "/Celebrites/cel 5.jpeg", category: "celebrities" },
+
+    // Additional Gallery Images
+    { id: 50, src: "/Wedding/wed 2.jpeg", category: "wedding" },
+    { id: 51, src: "/Wedding/wed 4.jpeg", category: "wedding" },
+    { id: 52, src: "/Concert/con 5.jpeg", category: "concerts" },
+    { id: 53, src: "/Concert/con 6.jpeg", category: "concerts" },
+    { id: 54, src: "/Navratri/Nav 3.jpeg", category: "navratri" },
+    { id: 55, src: "/Own Album/Album 2.jpeg", category: "albums" },
+    { id: 56, src: "/Own Album/Album 7.jpeg", category: "albums" },
+    { id: 57, src: "/Own Album/music1.jpg", category: "albums" },
+    { id: 58, src: "/Judge/jud 1.jpeg", category: "celebrities" },
+    { id: 59, src: "/Judge/jud 2.jpeg", category: "celebrities" },
 ];

@@ -75,7 +75,7 @@ export default function BrandsGallery() {
                 </div>
 
                 {/* Pure CSS Masonry Grid for Rangbastra */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
                     {rangbastraImages.map((src, index) => (
                         <motion.div 
                             key={`rang-${index}`} 
@@ -84,7 +84,7 @@ export default function BrandsGallery() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             onClick={() => setSelectedImage(src)}
-                            className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20"
+                            className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20 mb-6"
                         >     
                             <Image
                                 src={encodeURI(src)}
@@ -123,7 +123,7 @@ export default function BrandsGallery() {
                 </div>
 
                 {/* Pure CSS Masonry Grid for Banshi Boutique */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
                     {bansiImages.map((src, index) => (
                         <motion.div
                             key={`bansi-${index}`}
@@ -132,7 +132,7 @@ export default function BrandsGallery() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             onClick={() => setSelectedImage(src)}
-                            className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20"
+                            className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20 mb-6"
                         >
                             <Image
                                 src={encodeURI(src)}
@@ -171,7 +171,7 @@ export default function BrandsGallery() {
                 </div>
 
                 {/* Pure CSS Masonry Grid for The Royal Fest */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
                     {rajviImages.map((src, index) => (
                         <motion.div
                             key={`rajvi-${index}`}
@@ -180,7 +180,7 @@ export default function BrandsGallery() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             onClick={() => setSelectedImage(src)}
-                            className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20"
+                            className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20 mb-6"
                         >
                             <Image
                                 src={encodeURI(src)}
@@ -219,7 +219,7 @@ export default function BrandsGallery() {
                 </div>
 
                 {/* Pure CSS Masonry Grid for Binniesbliss */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
                     {binniImages.map((src, index) => (
                         <motion.div
                             key={`binni-${index}`}
@@ -228,7 +228,7 @@ export default function BrandsGallery() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             onClick={() => setSelectedImage(src)}
-                            className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20"
+                            className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer transition-all duration-700 hover:border-gold/30 hover:shadow-gold/20 mb-6"
                         >
                             <Image
                                 src={encodeURI(src)}

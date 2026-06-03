@@ -95,8 +95,8 @@ const ArtisticScrollTitle = ({ text, className = "" }: ArtisticScrollTitleProps)
             
             {/* Optional secondary text */}
             <motion.p 
-                style={{ opacity: useTransform(smoothProgress, [0.6, 1], [0, 0.5]) }}
-                className="mt-6 text-[10px] uppercase tracking-[0.5em] text-gold/80 font-inter"
+                style={{ opacity: useTransform(smoothProgress, [0.6, 1], [0, 1]) }}
+                className="mt-6 text-[10px] md:text-xs uppercase tracking-[0.5em] text-gold font-inter font-semibold text-center"
             >
                 Authentic Musical Journey
             </motion.p>

@@ -45,7 +45,7 @@ export default function ThreeDAlbum({ coverImage, compact = false }: ThreeDAlbum
                 <img
                     src={coverImage}
                     alt="Album Cover"
-                    className="relative z-10 w-full h-full object-contain select-none"
+                    className="relative z-10 w-full h-full object-cover select-none"
                 />
 
                 {/* Glossy Glass Reflection Overlay */}

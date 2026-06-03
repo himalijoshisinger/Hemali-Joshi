@@ -13,6 +13,8 @@ const concertImages = [
     "/Concert/con 2.jpeg",
     "/Concert/con 3.jpeg",
     "/Concert/con 4.jpeg",
+    "/Concert/con 5.jpeg",
+    "/Concert/con 6.jpeg",
     "/Concert/con 7.jpeg",
     "/Concert/con 8.jpeg",
     "/Concert/con 9.jpeg",
@@ -37,9 +39,9 @@ export default function ConcertsGalleryPage() {
                 </div>
                 
                 {/* Pure CSS Masonry Grid */}
-                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6 mb-32">
+                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 mb-32">
                     {concertImages.map((src, index) => (
-                        <div key={index} className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer">
+                        <div key={index} className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer mb-6">
                             <Image
                                 src={src}
                                 alt={`Live Concert by Himali Joshi - ${index + 1}`}

@@ -9,10 +9,12 @@ export const metadata: Metadata = {
 };
 
 const albumImages = [
+    { src: "/Own Album/Album 2.jpeg", title: "Live Melody" },
     { src: "/Own Album/Album 3.jpeg", title: "Musical Harmony" },
     { src: "/Own Album/Album 4.jpeg", title: "Vocal Essence" },
     { src: "/Own Album/Album 5.jpeg", title: "Studio Vibe" },
     { src: "/Own Album/Album 6.jpeg", title: "Soulful Melody" },
+    { src: "/Own Album/Album 7.jpeg", title: "Vocal Power" },
     { src: "/Own Album/Album 8.jpeg", title: "Artist Spotlight" },
     { src: "/Own Album/Album 9.jpeg", title: "Backstage Magic" },
     { src: "/Own Album/Album 10.jpeg", title: "Rhythm & Blues" },
@@ -21,6 +23,7 @@ const albumImages = [
     { src: "/Own Album/Album 13.jpeg", title: "Pure Emotion" },
     { src: "/Own Album/Album 14.jpeg", title: "Stage Presence" },
     { src: "/Own Album/15657711-5532-4f2f-aae9-4b2ef333f09e.JPG", title: "Visual Storytelling" },
+    { src: "/Own Album/music1.jpg", title: "Musical Magic" },
 ];
 
 export default function AlbumsGalleryPage() {
@@ -41,11 +44,11 @@ export default function AlbumsGalleryPage() {
                 </div>
 
                 {/* 3-Column Masonry Gallery */}
-                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6 mb-32">
+                <div className="columns-1 sm:columns-2 md:columns-3 gap-6 mb-32">
                     {albumImages.map((img, index) => (
                         <div
                             key={index}
-                            className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer"
+                            className="inline-block w-full break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl cursor-pointer mb-6"
                         >
                             <Image
                                 src={encodeURI(img.src)}

@@ -237,9 +237,9 @@ export default function AboutPage() {
                     </div>
 
                     {/* Card 3: Roles (Text) */}
-                    <div className="md:col-span-2 bg-gradient-to-br from-gold/10 to-black p-6 md:p-8 rounded-2xl border border-gold/20 flex flex-col justify-center text-center">
+                    <div className="md:col-span-2 bg-[#111] p-6 md:p-8 rounded-2xl border border-gold/20 flex flex-col justify-center text-center relative overflow-hidden group">
                         <Mic className="w-8 h-8 md:w-10 md:h-10 text-gold mx-auto mb-3 md:mb-4" />
-                        <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-1 md:mb-2">Roles</h4>
+                        <h4 className="text-xs text-gold/80 uppercase tracking-widest mb-1 md:mb-2">Roles</h4>
                         <p className="text-lg md:text-xl font-serif text-white leading-relaxed">Writer • Singer • Composer • Performer</p>
                     </div>
 
@@ -321,7 +321,7 @@ export default function AboutPage() {
                     <h2 className="font-serif text-5xl mb-6">Let's Create <span className="text-gold">Magic</span></h2>
                     <p className="text-gray-400 mb-8 font-light italic">"Music is the soundtrack of your life!"</p>
 
-                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-xl w-full px-4">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-xl w-full px-4">
                         <a href="mailto:inquiry.himalijoshi@gmail.com" className="hover:text-gold transition-colors text-sm sm:text-base md:text-xl break-all text-center">inquiry.himalijoshi@gmail.com</a>
                         <span className="hidden md:block text-gold">•</span>
                         <a href="tel:+916359012805" className="hover:text-gold transition-colors text-base md:text-xl">+91 6359 012 805</a>

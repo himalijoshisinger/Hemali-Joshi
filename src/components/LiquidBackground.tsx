@@ -9,7 +9,7 @@ export default function LiquidBackground() {
 
             {/* Orb 1: Gold - Primary */}
             <motion.div
-                className="absolute w-[40vw] h-[40vw] rounded-full bg-gold/30 blur-[100px] opacity-60"
+                className="absolute w-[45vw] h-[45vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.25)_0%,rgba(212,175,55,0.08)_35%,transparent_70%)] opacity-60 pointer-events-none will-change-transform"
                 animate={{
                     x: ["-20%", "20%", "-20%"],
                     y: ["-20%", "20%", "-20%"],
@@ -25,7 +25,7 @@ export default function LiquidBackground() {
 
             {/* Orb 2: Maroon - Depth */}
             <motion.div
-                className="absolute w-[50vw] h-[50vw] rounded-full bg-maroon/40 blur-[120px] opacity-50"
+                className="absolute w-[55vw] h-[55vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(128,0,0,0.3)_0%,rgba(128,0,0,0.1)_40%,transparent_70%)] opacity-50 pointer-events-none will-change-transform"
                 animate={{
                     x: ["20%", "-20%", "20%"],
                     y: ["20%", "-20%", "20%"],
@@ -41,7 +41,7 @@ export default function LiquidBackground() {
 
             {/* Orb 3: Amber/Orange - Highlights */}
             <motion.div
-                className="absolute w-[35vw] h-[35vw] rounded-full bg-amber/30 blur-[90px] opacity-40 mix-blend-screen"
+                className="absolute w-[40vw] h-[40vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,191,0,0.25)_0%,rgba(255,191,0,0.08)_35%,transparent_70%)] opacity-40 mix-blend-screen pointer-events-none will-change-transform"
                 animate={{
                     x: ["-10%", "30%", "-10%"],
                     y: ["10%", "-10%", "10%"],
@@ -57,7 +57,7 @@ export default function LiquidBackground() {
 
             {/* Orb 4: Subtle Crimson - Accent */}
             <motion.div
-                className="absolute w-[45vw] h-[45vw] rounded-full bg-crimson/20 blur-[110px] opacity-30"
+                className="absolute w-[50vw] h-[50vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(220,20,60,0.18)_0%,rgba(220,20,60,0.05)_35%,transparent_70%)] opacity-30 pointer-events-none will-change-transform"
                 animate={{
                     x: ["30%", "-10%", "30%"],
                     y: ["-10%", "30%", "-10%"],

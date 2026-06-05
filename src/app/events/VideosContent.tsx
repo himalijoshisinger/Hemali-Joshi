@@ -33,7 +33,7 @@ export default function VideosContent() {
         { id: 14, src: "/assets/News.mp4", poster: "/assets/media_uk.jpg", title: "Media spot in UK", desc: "Featured in news media for her unique garba releases and musical achievements.", objectFit: "contain" as const, category: "celebrity" },
         { id: 17, src: "/c1.mp4", poster: "/assets/concert.jpg", title: "Audience Love", desc: "Unconditional love and support from our beautiful audience.", objectFit: "cover" as const, objectPosition: "object-center", category: "audience" },
         { id: 16, src: "/assets/cli.mp4", poster: "/assets/Client.png", title: "Client Review", desc: "Amazing energy and love from our wonderful audience.", category: "audience" },
-        { id: 11, src: "/c2.mp4", poster: "/assets/Client1.png", title: "Client Review", desc: "A glimpse of the love and support from amazing fans.", category: "audience" },
+        { id: 11, src: "/C2064.mov", poster: "/assets/C2064_cover.jpg", title: "Client Review", desc: "A glimpse of the love and support from amazing fans.", objectFit: "contain" as const, category: "audience" },
         { id: 12, src: "/assets/vid2.mp4", poster: "/assets/ccl.png", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show.", category: "audience" },
     ];
 

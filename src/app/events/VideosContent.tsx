@@ -35,6 +35,7 @@ export default function VideosContent() {
         { id: 16, src: "/assets/cli.mp4", poster: "/assets/Client.png", title: "Client Review", desc: "Amazing energy and love from our wonderful audience.", category: "audience" },
         { id: 11, src: "/C2064.mov", poster: "/assets/C2064_cover.jpg", title: "Client Review", desc: "A glimpse of the love and support from amazing fans.", objectFit: "contain" as const, category: "audience" },
         { id: 18, src: "/C2063.mov", poster: "/assets/C2063_cover.jpg", title: "Audience Love", desc: "Amazing energy and connection with our beautiful audience during the live show.", objectFit: "contain" as const, category: "audience" },
+        { id: 19, src: "/review.mp4", poster: "/assets/review_cover.jpg", title: "Client Review", desc: "Wonderful feedback and blessings from our amazing audience.", objectFit: "contain" as const, category: "audience" },
         { id: 12, src: "/assets/vid2.mp4", poster: "/assets/ccl.png", title: "Fan Moments", desc: "Pure joy and unmatched support from our lovely audience during the live show.", category: "audience" },
     ];
 
@@ -180,7 +181,7 @@ export default function VideosContent() {
                     <div className="flex items-end justify-between border-b border-white/10 pb-4">
                         <h3 className="text-3xl md:text-4xl font-serif text-white">Audience <span className="italic text-gold">Love</span></h3>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {videos.filter((vid) => vid.category === "audience").map((vid) => (
                             <ArtisticVideoCard
                                 key={vid.id}

@@ -76,10 +76,10 @@ export const metadata: Metadata = {
     siteName: "Himali Joshi Official",
     images: [
       {
-        url: "/assets/logo-gold.png",
+        url: "/icon.png",
         width: 800,
-        height: 600,
-        alt: "Himali Joshi Official Logo",
+        height: 800,
+        alt: "Himali Joshi Official Icon Logo",
       },
     ],
     locale: "en_IN",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Himali Joshi | Singer | Performer | Musician",
     description: "Soulful vocals and vibrant live performances by top music artist Himali Joshi.",
-    images: ["/assets/logo-gold.png"],
+    images: ["/icon.png"],
   },
   robots: {
     index: true,
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/assets/logo-gold.png",
+    icon: "/icon.png",
   },
 };
 

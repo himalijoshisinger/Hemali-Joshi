@@ -44,8 +44,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Himali Joshi | Best Singer in Vadodara, Gujarat & India",
-    template: "%s | Best Singer in Vadodara & Gujarat | Himali Joshi"
+    default: "Himali Joshi | Singer | Performer | Musician",
+    template: "%s | Himali Joshi"
   },
   metadataBase: new URL('https://himalijoshi.com'),
   alternates: {
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Himali Joshi | Best Singer in Vadodara, Gujarat & India",
+    title: "Himali Joshi | Singer | Performer | Musician",
     description: "Official portal of Himali Joshi - Singer, Performer, and Music Creator. Experience the magic of soulful Indian music and book for international events.",
     url: "https://himalijoshi.com",
     siteName: "Himali Joshi Official",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Himali Joshi | Best Singer in Vadodara, Gujarat & India",
+    title: "Himali Joshi | Singer | Performer | Musician",
     description: "Soulful vocals and vibrant live performances by top music artist Himali Joshi.",
     images: ["/assets/logo-gold.png"],
   },

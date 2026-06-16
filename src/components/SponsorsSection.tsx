@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const SPONSORS = [
-    { id: 1, src: "/assets/sponsors/2ec4d5bd-99bc-43b5-98be-2c62c32d4714.JPG", alt: "Sponsor 1" },
-    { id: 2, src: "/assets/sponsors/51e6dbd5-ecab-472f-be99-fdd712656eb7.JPG", alt: "Sponsor 2" },
+    { id: 1, src: "/assets/sponsors/yrf.svg", alt: "Yash Raj Films" },
+    { id: 2, src: "/assets/sponsors/d9fc77ac-71dd-486a-9d88-e463c38a39cf.jpg", alt: "Taste of Vadodara" },
     { id: 3, src: "/assets/sponsors/741cd729-e77c-4222-9dac-c47afddacc66.JPG", alt: "Sponsor 3" },
     { id: 4, src: "/assets/sponsors/ba072700-f0ee-44ba-a025-d72b19fd9da1.JPG", alt: "Sponsor 4" },
-    { id: 5, src: "/assets/sponsors/d9fc77ac-71dd-486a-9d88-e463c38a39cf.jpg", alt: "Sponsor 5" },
+    { id: 5, src: "/assets/sponsors/51e6dbd5-ecab-472f-be99-fdd712656eb7.JPG", alt: "Vadodara Talent 2" },
     { id: 6, src: "/assets/sponsors/ee0fafd6-846c-4741-810b-c54497b12619.JPG", alt: "Sponsor 6" },
-    { id: 7, src: "/assets/sponsors/yrf.svg", alt: "Yash Raj Films" },
+    { id: 7, src: "/assets/sponsors/2ec4d5bd-99bc-43b5-98be-2c62c32d4714.JPG", alt: "YATI Events" },
     { id: 8, src: "/assets/sponsors/dharma_events.jpg", alt: "Dharma Events" },
 ];
 
